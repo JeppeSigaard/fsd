@@ -1,5 +1,6 @@
 <?php 
 require 'functions/disable-pages.php';
+require 'functions/stem.php';
 require 'functions/images.php';
 require 'functions/menus.php';
 require 'functions/meta-box.php';
