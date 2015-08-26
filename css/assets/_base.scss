@@ -10,6 +10,8 @@ html,body{
     backface-visibility: hidden;
     -webkit-text-size-adjust: 100%;
     line-height: 1;
+    width:100%;
+    overflow-x: hidden;
     
     *{
         box-sizing:inherit;

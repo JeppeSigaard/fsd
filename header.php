@@ -20,7 +20,7 @@
             <div class="inner">
                 <a href="<?php echo esc_url(bloginfo('url')); ?>" class="header-bar-logo">
                     <div class="logo">
-                        <img src="<?php header_image(); ?>">
+                        <?php include get_template_directory().'/libs/img/logo.svg'; ?>
                     </div>
                     <span class="page-title-da">Foreningen For Sygehusmaskinmestre i Danmark</span>
                     <span class="page-title-en">The Danish Association of Hospital Engineers</span>

@@ -17,11 +17,13 @@ $site-nav-width:280px;
     width:$site-nav-width;
     right:-$site-nav-width;
     transition: right 200ms;
+    box-shadow: $base-shadow;
     
 
     @media only screen and(min-width:960px){
         right:0;
-        transition:right 0;
+        transition:right 0ms;
+        box-shadow: none;
     }
     
     padding-top:$header-bar-height + $top-menu-height;
@@ -38,7 +40,7 @@ $site-nav-width:280px;
     &.fixed{
         position:fixed;
         
-         padding-top:$header-bar-height;
+        padding-top:$header-bar-height;
     
         @media only screen and(min-width:768px){
             padding-top:$header-bar-height-large;

@@ -1,0 +1,11 @@
+.front-page-slider{
+    
+    background: $fsd-light;
+    padding:$base-margin;
+    
+    .inner{
+        background:$fsd-black;
+        height:0;
+        padding-bottom: 45%;
+    }
+}
