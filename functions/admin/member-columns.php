@@ -1,0 +1,82 @@
+<?php 
+/*
+ * MEDLEMMER ADMIN COLUMN - HEADERS
+ */
+add_filter('manage_edit-medlem_columns', 'add_new_medlem_columns');
+function add_new_medlem_columns($medlem_columns) {
+	$new_columns['cb'] = '<input type="checkbox" />';
+	$new_columns['name'] = __('Navn', 'column name');
+	$new_columns['sygehus'] = __('Sygehus', 'column name');
+	$new_columns['region'] = __('Region', 'column name');
+    $new_columns['type'] = 'Medlemstype';
+    $new_columns['position'] = __('Titel', 'column name');
+    $new_columns['email'] = 'E-mail';
+	//$new_columns['city'] = __('City');
+	return $new_columns;
+}
+
+/*
+ * MEDLEMMER ADMIN COLUMN - CONTENT
+ */
+add_action('manage_medlem_posts_custom_column', 'manage_medlem_columns', 10, 2);
+function manage_medlem_columns($column_name, $id) {
+	global $post;
+	switch ($column_name) {
+        
+        case 'name':
+            echo edit_post_link( get_post_meta($post->ID,'medlem_name',true), '<b>', '</b>', $post->ID );
+            break;
+            
+        case 'position':
+            echo get_post_meta($post->ID,'medlem_position',true);
+            break;
+            
+        case 'sygehus':
+            echo get_post_meta($post->ID,'medlem_work',true);
+            break;
+		
+        case 'region':
+            echo get_post_meta($post->ID,'medlem_region',true);
+            break;
+            
+        case 'type':
+            echo ( get_post_meta($post->ID,'medlem_type',true) == 'erhverv' ) ? 'Erhverv': 'Privat';
+            break;
+            
+        case 'email':
+            echo '<a href="mailto:'.get_post_meta($post->ID,'medlem_email',true).'">'.get_post_meta($post->ID,'medlem_email',true).'</a>';
+            break;
+		
+        default:
+			break;
+	} 
+}
+
+/*
+ * MEDLEMMER ADMIN COLUMN - SORTING 
+ */
+add_filter("manage_edit-medlem_sortable_columns", 'medlem_sort');
+function medlem_sort($columns) {
+	$custom = array(
+		'name' 	=> 'name',
+		'sygehus' 		=> 'sygehus',
+        'region'    => 'region',
+	);
+	return wp_parse_args($custom, $columns);
+}
+
+/*
+ * MEDLEMMER ADMIN COLUMN - SORTING - ORDERBY
+ */
+add_filter( 'request', 'smamo_column_orderby' );
+function smamo_column_orderby( $vars ) {
+	
+    // Sorter efter region
+    if ( isset( $vars['orderby'] ) && 'region' == $vars['orderby'] ) {
+		$vars = array_merge( $vars, array(
+			'meta_key' => 'medlem_region',
+			'orderby' => 'meta_value',
+		) );
+	}
+	return $vars;
+}

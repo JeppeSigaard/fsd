@@ -1,9 +1,8 @@
-<?php 
+<?php get_header(); ?>
 
-get_header();
+<div class="content">
+<?php
 
-
-// Forside eller side markeret som forside
 if(is_home() || is_front_page()){
     require 'pages/front-page.php';
 }
@@ -20,7 +19,9 @@ elseif(is_single()){
     require 'pages/single.php';
 }
 
-
-
 else{require 'pages/404.php';}
-get_footer();
+
+?>
+</div>
+
+<? get_footer();

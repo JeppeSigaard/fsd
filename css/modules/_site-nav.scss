@@ -1,0 +1,134 @@
+$site-nav-width:280px;
+
+.site-nav{
+    position:absolute;
+    z-index:10;
+    background-color:$fsd-white;
+    top:0;
+    height:100vh;
+    overflow:hidden;
+    
+    
+    
+    .inner{
+        padding:$base-margin;
+    }
+    
+    width:$site-nav-width;
+    right:-$site-nav-width;
+    transition: right 200ms;
+    
+
+    @media only screen and(min-width:960px){
+        right:0;
+        transition:right 0;
+    }
+    
+    padding-top:$header-bar-height + $top-menu-height;
+    
+    @media only screen and(min-width:768px){
+        padding-top:$header-bar-height-large + $top-menu-height;
+        
+    }
+    
+    &.show{
+        right:0;
+    }
+    
+    &.fixed{
+        position:fixed;
+        
+         padding-top:$header-bar-height;
+    
+        @media only screen and(min-width:768px){
+            padding-top:$header-bar-height-large;
+
+        }
+    }
+    
+    
+}
+
+.site-nav-menu{
+
+    font-weight:$base-font-weight-2;
+    padding:15px 20px;
+    
+    li{
+        position:relative;
+        
+        &:before{
+            display: block;
+            position:absolute;
+            left:-40px;
+            top:18px;
+            content:'';
+            border-top: 0px solid transparent;
+            border-bottom: 0px solid transparent;
+            border-left: 0px solid $fsd-color-red;
+            transition:border-left 100ms, border-bottom 100ms, border-top 100ms, top 100ms ;
+            
+        }
+    }
+    
+    
+    a{
+        display: block;
+        transition: color 120ms;
+        padding:15px 0px;
+        
+        &:hover{
+            color: $fsd-color-red;
+        }
+    }
+    
+    .current-menu-item,
+    .current-menu-ancestor{
+        
+        &:before{
+            top:13px;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-left: 10px solid $fsd-color-red;
+        }
+        
+        >a{
+            color:$fsd-color-red;
+            font-weight:$base-font-weight-3;
+        }
+        
+        .sub-menu{
+            display: block;
+        }
+    }
+    
+    
+    .sub-menu{
+        display: none;
+        overflow:hidden;
+        padding-left:$base-margin;
+        
+        .current-menu-item{
+            
+            &:before{
+                display: none;
+            }
+            
+            >a{
+                color:$fsd-color-red;
+                font-weight:$base-font-weight;
+                
+            }
+            
+        }
+        
+        a{
+            color:lighten($fsd-black,20);
+            font-weight:$base-font-weight;
+            
+            &:hover{
+                    color: $fsd-color-red;
+                }
+        }   
+    }
+}

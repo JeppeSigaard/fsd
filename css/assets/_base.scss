@@ -1,6 +1,8 @@
 html,body{
     
     font-family:$base-font;
+    background:$fsd-light;
+    color:$fsd-black;
     font-weight: $base-font-weight;
     @extend %font-size;
     box-sizing:border-box;

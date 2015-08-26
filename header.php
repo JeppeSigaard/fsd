@@ -7,3 +7,39 @@
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+    <header class="site-header">
+        <nav class="top-menu">
+            <?php wp_nav_menu(array(
+                'theme_location' => 'top_menu',
+                'container' => 'false',
+                'fallback_cb'     => 'null',
+                'items_wrap'      => '<ul>%3$s</ul>',
+            )); ?>
+        </nav>
+        <div class="header-bar">
+            <div class="inner">
+                <a href="<?php echo esc_url(bloginfo('url')); ?>" class="header-bar-logo">
+                    <div class="logo">
+                        <img src="<?php header_image(); ?>">
+                    </div>
+                    <span class="page-title-da">Foreningen For Sygehusmaskinmestre i Danmark</span>
+                    <span class="page-title-en">The Danish Association of Hospital Engineers</span>
+                </a>
+                <div class="header-bar-nav">
+                    <input type="text" placeholder="Søg på FSD">
+                    <a class="header-bar-button button-search" href="#">Søg</a>
+                    <a class="header-bar-button button-menu-toggle" href="#">Menu</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <nav class="site-nav">
+        <div class="inner">
+            <?php wp_nav_menu(array(
+                'theme_location' => 'main_menu',
+                'container' => 'false',
+                'fallback_cb'     => 'null',
+                'items_wrap'      => '<ul class="site-nav-menu">%3$s</ul>',
+            )); ?>
+        </div>
+    </nav>

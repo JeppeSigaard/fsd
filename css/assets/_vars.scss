@@ -1,8 +1,10 @@
 @charset "utf-8";
 
 // FONT
-$base-font:arial, helvetica, sans-serif;
+$base-font: 'Source Sans Pro', sans-serif;
 $base-font-weight: 300;
+$base-font-weight-2: 400;
+$base-font-weight-3: 600;
 $text-margin:.7em;
 
 $base-font-size: 14px;
@@ -21,12 +23,17 @@ $read-width-max:640px;
 
 // Farver
 
-$color-black:    #222;
-$color-dark:     #454545;
-$color-light:    #f0f0f0;
-$color-white:    #f9f9f9;
+$fsd-black: #333333;
+$fsd-light: #f0f0f0;
+$fsd-light-2: #e0e0e0;
+$fsd-white: #ffffff;
 
-$color-red:      #f00;
-$color-yellow:   #ff0;
-$color-green:    #0f0;
-$color-blue:     #00f;
+$fsd-color-red: #E13215;
+$fsd-color-yellow: #d9e115;
+$fsd-color-green: #15e163;
+$fsd-color-blue: #1563e1;
+
+
+// Skygge
+
+$base-shadow: 1px 1px 2px 0px rgba($fsd-black,.2) ;

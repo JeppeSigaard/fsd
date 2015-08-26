@@ -7,3 +7,5 @@ require 'functions/meta-box.php';
 require 'functions/no-emojis.php';
 require 'functions/post-types.php';
 require 'functions/scripts.php';
+require 'functions/admin.php';
+require 'functions/custom-header.php';
