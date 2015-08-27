@@ -2,41 +2,32 @@
     
     .logo-shadows{
       
-        fill:#f0f0f0;
+        fill:$fsd-light;
         stroke:#151515;
         stroke-width:1;
-        transition:stroke-width 200ms;
        
     }
     
     .logo-foreground{
-        fill:#E13215;
+        fill:$fsd-color-red;
         stroke:#151515;
-        stroke-width:0;
+        stroke-width:.25;
     }
     
     .logo-lines{
        
-        fill:#FFFFFF;
+        fill:$fsd-white;
         stroke:#151515;
         stroke-width:1;
-        transition:stroke-width 200ms;
     }
 }
-
-a:hover .fsd-logo{
-        
-        .logo-shadows,.logo-lines{
-            stroke-width:0;
-        }
-        
-    }
 
 
 .site-footer .fsd-logo {
     
     .logo-foreground{
         fill:$fsd-white;
+        stroke-width:1;
     }
     
     .logo-shadows{

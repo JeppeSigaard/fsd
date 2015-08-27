@@ -2,10 +2,11 @@ $site-nav-width:280px;
 
 .site-nav{
     position:absolute;
+    overflow:hidden;
     z-index:10;
     background-color:$fsd-white;
     top:0;
-    height:100vh;
+    height:calc(100vh + #{$top-menu-height});
     overflow:hidden;
     
     
@@ -39,7 +40,7 @@ $site-nav-width:280px;
     
     &.fixed{
         position:fixed;
-        
+        height:100vh;
         padding-top:$header-bar-height;
     
         @media only screen and(min-width:768px){
