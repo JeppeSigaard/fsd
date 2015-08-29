@@ -1,0 +1,47 @@
+/*
+.content main, .content aside{
+    @extend %font-size
+}
+
+@media only screen and(min-width:1600px){
+    
+    .content{
+        font-size: 0
+    }
+    
+    .content main{
+        display: inline-block;
+        vertical-align: top;
+        float:right;
+        width:calc(100% / 3 * 2);
+    }
+    
+    .content aside{
+        display: inline-block;
+        vertical-align: top;
+        margin-top:90px;
+        width:calc(100% / 3);
+    }
+}
+
+*/
+.content main article{
+    position: relative;
+    background:$fsd-white;
+    padding:$base-margin/2 $base-margin/2 $base-margin;
+    @media only screen and(min-width:640px){
+        padding:$base-margin $base-margin $base-margin*2;
+    }
+    
+    .single-img{
+        height:0;
+        padding-bottom:56.25%;
+        background:$fsd-black;
+    }
+    
+    .post-title{
+        padding:$base-margin 0;
+        font-weight:$base-font-weight-2;
+        font-size:150%;
+    }
+}

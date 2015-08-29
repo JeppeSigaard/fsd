@@ -8,13 +8,13 @@ $(function(){if($('.site-nav').length){
         
         var st = $(this).scrollTop(),
             diff = st - lastScrollTop,
-            scrollStop = $(this).innerHeight() + $(this).scrollTop(),
-            fancyHeight = fancyScroll.offset().top + fancyScroll.innerHeight() + 6.5,
+            scrollStop = $(window).innerHeight() + $(window).scrollTop(),
+            fancyHeight = fancyScroll.offset().top + fancyScroll.innerHeight(),
             fancyScrollAmount = fancyScroll.scrollTop() + diff;
         
-        fancyScroll.scrollTop(fancyScrollAmount);
+        if(fancyScroll.hasClass('fixed') || $(window).width < 768){fancyScroll.scrollTop(fancyScrollAmount);}
         
-        if(fancyScroll.offset().top - 50 > $(this).scrollTop()){
+        if(fancyScroll.offset().top - 70 > $(window).scrollTop()){
 
             fancyScroll.addClass('start').scrollTop(0);
             

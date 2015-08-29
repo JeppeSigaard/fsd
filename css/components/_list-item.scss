@@ -4,6 +4,7 @@ $arrow-hover-bg:rgba($fsd-color-red,.3);
 $arrow-transition:120ms;
 
 .list-item{
+    @extend %font-size;
     background:$fsd-white;
     margin-top:$base-margin*1.5;
     padding:$base-margin/2;
@@ -122,6 +123,22 @@ $arrow-transition:120ms;
     
 }
 
+@media only screen and(min-width:540px) and (max-width:640px){
+        .list-split{
+            
+            font-size:0;
+            margin:0px -5px;
+            
+            .list-item{
+                display: inline-block;
+                width:50%;
+                border:5px solid $fsd-light-2;
+            }
+        }
+    }
+
+
+
 @media(min-width:640px){.list-wide .list-item{
 
     padding: $base-margin/2;
@@ -135,6 +152,11 @@ $arrow-transition:120ms;
             top:-10px;
             bottom:-10px;
             right:-($arrow-size*2 + $base-margin/2);
+            
+            @media only screen and(min-width:1280px){
+                right:-($arrow-size*2 + $base-margin/2 + 2);
+            }
+            
         }
     }
     

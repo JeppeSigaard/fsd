@@ -27,8 +27,8 @@
        <header class="post-list-header">
            <a href="#" class="arrow-link">Kommende arrangementer</a>
        </header>
-        <ul class="post-list list-wide">
-           <?php $i= 0; while ($i < 3) : $i++;?>
+        <ul class="post-list list-wide list-split">
+           <?php $i= 0; while ($i < 4) : $i++;?>
            <?php get_template_part('parts/list','item'); ?>
            <?php endwhile; ?>
        </ul>

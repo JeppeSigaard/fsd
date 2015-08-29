@@ -24,7 +24,7 @@ $site-nav-width:280px;
     width:$site-nav-width;
     right:-$site-nav-width;
     transition: right 200ms;
-    box-shadow: $base-shadow;
+    box-shadow:-1px -1px 5px rgba($fsd-black,.3);
     
 
     @media only screen and(min-width:960px){
