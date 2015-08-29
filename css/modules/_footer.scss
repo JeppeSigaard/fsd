@@ -1,4 +1,5 @@
 .site-footer{
+    transform:translate3d(0,0,0);
     @extend section;
     background-color:$fsd-black;
     color:$fsd-light-2;

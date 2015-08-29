@@ -4,7 +4,7 @@
             <?php $i= 0; while ($i < 4) : $i++;?>
             <li class="list-item">
                 <a href="#" class="post_class inner">
-                    <div class="list-item-img" style="background-image:url(http://lorempixel.com/1600/800/);">
+                    <div class="list-item-img" style="background-image:url(http://lorempixel.com/1600/800/technics);">
                         <div class="post-date"><span>26</span><span>okt 2015</span></div>
                     </div>
                     <header class="list-item-header">Lorem ipsum dolor.</header>
