@@ -35,8 +35,11 @@
     
     .single-img{
         height:0;
-        padding-bottom:56.25%;
-        background:$fsd-black;
+        padding-bottom:50%;
+        background-color:$fsd-black;
+        background-size:cover;
+        background-position:center;
+        background-repeat:no-repeat;
     }
     
     .post-title{

@@ -1,5 +1,4 @@
-<div class="single-img">
-    <?php the_post_thumbnail('single'); ?>
+<div class="single-img" style="background-image:url(http://lorempixel.com/750/325/);">
     <div class="post-date"></div>
 </div>
 <h1 class="post-title"><?php the_title(); ?></h1>
