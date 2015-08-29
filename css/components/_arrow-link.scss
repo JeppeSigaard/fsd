@@ -9,6 +9,13 @@ body .arrow-link{
     transition: background 120ms;
     color:$fsd-white;
     font-weight:$base-font-weight-2;
+    text-decoration: none;
+    
+    &:hover,
+    &:active,
+    &:visited{
+        text-decoration: none;
+    }
     
     &:after{
     
@@ -49,4 +56,21 @@ body .arrow-link{
         }   
     }
     
+    &.invert{
+        
+        background-color: white;
+        color:$fsd-black;
+        
+        &:after{
+            border-right-color:white;
+            border-left-color:white;
+        }
+    }
+    
+    
+    
+}
+
+.right .arrow-link{
+    margin-right:20px;
 }
