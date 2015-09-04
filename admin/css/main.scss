@@ -1,0 +1,7 @@
+#aside_control .rwmb-clone .rwmb-group-wrapper{
+    display: none;
+    
+    &.show{
+        display: block;
+    }
+}

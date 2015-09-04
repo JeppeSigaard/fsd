@@ -1,4 +1,13 @@
-<?php 
+<?php
+/*  
+
+Functions fil
+Alle temafunktioner er abstraheret i respektive filer og mapper, se /functions/-mappen
+
+Kh SmartMonkey
+
+*/
+
 require 'functions/disable-pages.php';
 require 'functions/stem.php';
 require 'functions/images.php';

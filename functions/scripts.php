@@ -23,3 +23,11 @@ function vc_remove_wp_ver_css_js( $src ) {
 }
 add_filter( 'style_loader_src', 'vc_remove_wp_ver_css_js', 9999 );
 add_filter( 'script_loader_src', 'vc_remove_wp_ver_css_js', 9999 );
+
+
+add_action( 'admin_enqueue_scripts', 'smamo_admin_script' );
+function smamo_admin_script(){
+    wp_enqueue_script( 'smamo_admin_script', get_template_directory_uri() . '/admin/js/main.min.js');
+    wp_enqueue_style( 'smamo_admin_style', get_template_directory_uri().'/admin/css/main.css', false, false, 'all' );
+    
+}

@@ -1,37 +1,52 @@
-<?php get_header(); ?>
+<?php 
+
+/* 
+
+Index fil til dette tema
+Hent header og site-nav, og hent derefter page template, switch board style.
+Se så ren en mappestruktur det giver. Og squaky clean templates. Se evt. /pages/-mappen
+
+KH SmartMonkey
+
+*/
+
+get_header(); 
+
+?>
 <div class="page-wrap">
-    <nav class="site-nav">
-        <div class="inner">
-            <?php wp_nav_menu(array(
-                'theme_location' => 'main_menu',
-                'container' => 'false',
-                'fallback_cb'     => 'null',
-                'items_wrap'      => '<ul class="site-nav-menu">%3$s</ul>',
-            )); ?>
-        </div>
-    </nav>
+    <?php get_template_part('parts/site','nav') ?>
     <div class="content">
-    <?php
+        <?php
 
-    if(is_home() || is_front_page()){
-        require 'pages/front-page.php';
-    }
+        // Home og front page behandles ens
+        if(is_home() || is_front_page()){
+            require 'pages/front-page.php';
+        }
 
-    elseif(is_archive()){
-        require 'pages/archive.php';
-    }
+        // Arkiver
+        elseif(is_archive()){
+            require 'pages/archive.php';
+        }
 
-    elseif(is_page()){
-        require 'pages/page.php';
-    }
+        // enkeltsider
+        elseif(is_page()){
+            require 'pages/page.php';
+        }
 
-    elseif(is_single()){
-        require 'pages/single.php';
-    }
+        // Singles, posts osv.
+        elseif(is_single()){
+            require 'pages/single.php';
+        }
 
-    else{require 'pages/404.php';}
+        // Søgning
+        elseif(is_search()){
+            require 'pages/search.php';
+        }
 
-    ?>
+        // Side ikke fundet
+        else{require 'pages/404.php';}
+
+        ?>
     </div>
 </div>
-<? get_footer();
+<?php get_footer();

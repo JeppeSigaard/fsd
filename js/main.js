@@ -5,3 +5,5 @@
 // @koala-append 'modules/window-scroll.js';
 // @koala-append 'modules/sync-scroll.js';
 // @koala-append 'modules/front-page-slider.js';
+
+/* Kompileret med koala, brug din egen som du har lyst :-) */

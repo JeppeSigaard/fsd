@@ -12,16 +12,11 @@
     </div>
 </section>
 
-<section class="quick-links">
-    <div class="inner">
-        <ul class="post-list list-quick-links">
-            <?php $i= 0; while ($i < 4) : $i++;?>
-           <?php get_template_part('parts/list','item'); ?>
-           <?php endwhile; ?>
-        </ul>
-    </div>
-</section>
 
+<?php get_template_part('parts/aside','controller'); ?>
+
+
+<!--
 <section class="list-events-new">
    <div class="inner read-width">
        <header class="post-list-header">
@@ -34,7 +29,7 @@
        </ul>
    </div>
 </section>
-
+-->
 
 <section class="newsletter-subscribe">
     <article class="inner read-width">

@@ -1,11 +1,11 @@
-<?php $rand = rand(0,9); $rand_2 = rand(0,9); ?>
-<li class="list-item">
-    <a href="#" class="post_class inner">
-        <div class="list-item-img" style="background-image:url(http://lorempixel.com/64<?php echo $rand ?>/32<?php echo $rand_2 ?>/);">
+<?php $image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'medium' ); ?>
+<li <?php post_class('list-item'); ?>>
+    <a href="<?php the_permalink(); ?>" class="inner">
+        <div class="list-item-img" <?php echo (is_array($image_url)) ? 'style="background-image:url('.$image_url[0].');"' : ''?>>
             <div class="post-date"><span>26</span><span>okt 2015</span></div>
         </div>
-        <header class="list-item-header">Lorem ipsum dolor.</header>
-        <div class="list-item-excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </div>
+        <header class="list-item-header"><?php the_title(); ?></header>
+        <div class="list-item-excerpt"><?php the_excerpt(); ?></div>
     </a>
 </li>
 

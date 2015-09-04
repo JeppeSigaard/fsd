@@ -1,31 +1,7 @@
-/*
-.content main, .content aside{
-    @extend %font-size
-}
 
-@media only screen and(min-width:1600px){
-    
-    .content{
-        font-size: 0
-    }
-    
-    .content main{
-        display: inline-block;
-        vertical-align: top;
-        float:right;
-        width:calc(100% / 3 * 2);
-    }
-    
-    .content aside{
-        display: inline-block;
-        vertical-align: top;
-        margin-top:90px;
-        width:calc(100% / 3);
-    }
-}
-
-*/
 .content main article{
+    @extend .list-item;
+    margin-top:0;
     position: relative;
     background:$fsd-white;
     padding:$base-margin/2 $base-margin/2 $base-margin;
@@ -34,12 +10,24 @@
     }
     
     .single-img{
+        position:relative;
         height:0;
         padding-bottom:50%;
         background-color:$fsd-black;
         background-size:cover;
         background-position:center;
         background-repeat:no-repeat;
+    }
+    
+    .no-img{
+        position:relative;
+        height:75px;
+        margin: 0 -10px;
+
+    }
+    
+    .post-date{
+        line-height: 1;
     }
     
     .post-title{
