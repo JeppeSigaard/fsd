@@ -9,6 +9,8 @@ function smamo_add_boxes(){
     require 'meta-box/member.php';
     require 'meta-box/show_in_slide.php';
     require 'meta-box/aside_control.php';
+    require 'meta-box/event.php';
+    require 'meta-box/show_thumbnail.php';
     
     
     return $mb;

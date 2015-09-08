@@ -34,7 +34,7 @@ get_header();
         }
 
         // Singles, posts osv.
-        elseif(is_single()){
+        elseif(is_singular()){
             require 'pages/single.php';
         }
 

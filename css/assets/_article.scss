@@ -95,5 +95,10 @@ body article{
     a:visited, 
     a:hover{
         text-decoration: underline;
+        transition:color 120ms;
+    }
+    
+    a:hover{
+       color:$fsd-color-red;
     }
 }

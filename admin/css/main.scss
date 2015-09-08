@@ -1,7 +1,7 @@
-#aside_control .rwmb-clone .rwmb-group-wrapper{
+#aside_control .rwmb-clone .rwmb-field{
     display: none;
     
-    &.show{
+    &.show, &.always-show{
         display: block;
     }
 }
