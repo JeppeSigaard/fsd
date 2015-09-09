@@ -39,12 +39,14 @@ get_header();
         }
 
         // Søgning
-        elseif(is_search()){
+        elseif(is_search() || isset($_GET['s'])){
             require 'pages/search.php';
         }
 
         // Side ikke fundet
-        else{require 'pages/404.php';}
+        elseif(is_404()){
+            require 'pages/404.php';
+        }
 
         ?>
     </div>

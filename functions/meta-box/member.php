@@ -82,8 +82,11 @@ $mb[] = array(
             'type' => 'select_advanced',
             'placeholder' => __('Vælg type','rwmb'),
             'options'   => array(
-                'privat' => 'Privat',
-                'erhverv' => 'Erhverv',
+                '0' => 'ikke registreret',
+                '1' => 'Pensioneret',
+                '2' => 'Ordinær',
+                '3' => 'Ekstraordinær',
+                '99' => 'Passiv / inaktiv',
             ),
         ),
         

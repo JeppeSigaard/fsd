@@ -40,7 +40,12 @@ function manage_medlem_columns($column_name, $id) {
             break;
             
         case 'type':
-            echo ( get_post_meta($post->ID,'medlem_type',true) == 'erhverv' ) ? 'Erhverv': 'Privat';
+            $type = get_post_meta($post->ID,'medlem_type',true);
+            if ($type === '0' || $type === ''){echo 'Ikke registreret';}
+            if ($type === '1'){echo 'Pensioneret';}
+            if ($type === '2'){echo 'Ordinær';}
+            if ($type === '3'){echo 'Ekstraordinær';}
+            if ($type === '99'){echo 'Inaktiv';}
             break;
             
         case 'email':

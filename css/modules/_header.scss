@@ -139,6 +139,10 @@ $header-bar-nav-height:45px;
         vertical-align: top;
     }
     
+    form{
+        display: inline-block;
+    }
+    
     input{
         background:$fsd-light;
         color:inherit;

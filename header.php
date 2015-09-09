@@ -26,7 +26,7 @@
                     <span class="page-title-en">The Danish Association of Hospital Engineers</span>
                 </a>
                 <div class="header-bar-nav">
-                    <form>
+                    <form action="<?php bloginfo('url') ?>">
                     <input type="text" name="s" placeholder="Søg på FSD">
                     <input type="submit" class="header-bar-button button-search" value="Søg">
                     </form>

@@ -29,7 +29,7 @@ input:-webkit-autofill {
     opacity:.4;
 }
 
-.page-wrap form{
+.page-wrap form:not(#search-redo){
     
     &.small{
         max-width:320px;
