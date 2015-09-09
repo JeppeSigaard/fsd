@@ -105,5 +105,11 @@ $mb[] = array(
             ),
         ),
         
+        array(
+            'name'  => __('Evt. bestyrelsespost i FSD','rwmb'),
+            'id'    => 'best_post',
+            'type'  => 'text',
+        ),
+        
     ),
 );

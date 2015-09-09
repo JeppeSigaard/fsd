@@ -1,0 +1,22 @@
+body .wp-caption { 
+    
+    max-width: 100%; 
+    position: relative;
+    
+    .wp-caption-text{
+        @extend .arrow-link;
+        position:absolute;
+        left:0;
+        top:50%;
+        transform: translate(0,-50%);
+        
+    }
+    
+    &:hover .wp-caption-text{
+        background-color:lighten($fsd-color-red,10); 
+    
+        &:after{
+            border-left: 20px solid lighten($fsd-color-red,10);
+        }
+    }
+}

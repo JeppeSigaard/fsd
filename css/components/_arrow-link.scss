@@ -56,6 +56,16 @@ body .arrow-link{
         }   
     }
     
+    &.grey{
+        background-color: darken($fsd-light-2,10);
+        color:$fsd-black;
+        
+        &:after{
+            border-right-color:darken($fsd-light-2,10);
+            border-left-color:darken($fsd-light-2,10);
+        }
+    }
+    
     &.invert{
         
         background-color: white;

@@ -18,3 +18,5 @@ require 'functions/post-types.php';
 require 'functions/scripts.php';
 require 'functions/admin.php';
 require 'functions/custom-header.php';
+require 'functions/excerpt-length.php';
+require 'functions/links.php';

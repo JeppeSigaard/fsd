@@ -12,6 +12,17 @@ $arrow-transition:120ms;
         padding:$base-margin;    
     }
     
+    &.type-medlem{
+        .best-post{
+            position: relative;
+            top:-15px;
+        }
+        
+        .list-item-header{
+            font-size:125%;
+        }
+    }
+    
     
     display: block;
     position: relative;
@@ -133,11 +144,64 @@ $arrow-transition:120ms;
                 display: inline-block;
                 width:50%;
                 border:5px solid $fsd-light-2;
+                vertical-align: top;
+                
+                &.type-medlem .inner{
+                    padding-bottom: 125%;
+                    height: 0;
+                    
+                     &:hover:before{
+                         background-color: $arrow-bg;
+                    }
+                    
+                    &:hover .list-item-img:after,
+                    &:hover .list-item-img:before,
+                    {
+                        
+                        border-right:$arrow-size solid $arrow-bg;
+                       
+                        
+                    }
+                }
             }
         }
     }
 
-
+@media only screen and(min-width:640px){
+    
+    .list-split:not(.list-wide){
+            
+            font-size:0;
+            margin:0px -5px;
+            
+            .list-item{
+                display: inline-block;
+                vertical-align: top;
+                width:50%;
+                border:5px solid $fsd-light-2;
+                padding:10px;
+                
+                &.type-medlem .inner{
+                    padding-bottom: 125%;
+                    height: 0;
+                    
+                    &:hover:before{
+                         background-color: $arrow-bg;
+                    }
+                    
+                    &:hover .list-item-img:after,
+                    &:hover .list-item-img:before,
+                    {
+                        
+                        border-right:$arrow-size solid $arrow-bg;
+                       
+                        
+                    }
+                }
+            }
+        }
+    
+}
 
 @media(min-width:640px){.list-wide .list-item{
 
@@ -193,6 +257,7 @@ $arrow-transition:120ms;
     
     .list-item-excerpt{
         top:25%;
+        height: 75%;
     }
     
         

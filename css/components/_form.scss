@@ -21,11 +21,6 @@ input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0px 1000px $fsd-light inset;
 }
 
-.sheeted-form input:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0px 1000px $fsd-white inset;
-}
-
-
 
 %label-up{
     font-size: $input-font-size / 1.3;
@@ -34,13 +29,7 @@ input:-webkit-autofill {
     opacity:.4;
 }
 
-form.sheeted-form{
-    padding:$base-margin*2;
-    background:$fsd-white;
-    box-shadow: $base-shadow;
-    margin:auto;
-}
-form{
+.page-wrap form{
     
     &.small{
         max-width:320px;
