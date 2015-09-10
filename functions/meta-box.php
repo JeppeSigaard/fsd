@@ -11,6 +11,7 @@ function smamo_add_boxes(){
     require 'meta-box/aside_control.php';
     require 'meta-box/event.php';
     require 'meta-box/show_thumbnail.php';
+    require 'meta-box/forms.php';
     
     
     return $mb;

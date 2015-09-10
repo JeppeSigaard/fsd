@@ -1,20 +1,59 @@
-
 var checkSuccess = function(target){
     
-    if(target.val() === ''){
+    if(target.val() === ''){target.removeClass('success').next('label').removeClass('stayup');}
+    
+    else if(target.is('input[type="checkbox"], input[type="radio"]')){}
+    
+    else{target.addClass('success').next('label').addClass('stayup');}
 
+}
+
+var formHandleResponse = function(response,form){
+    
+    form.removeClass('loading');
+    
+    if(response.success){
+        if(!form.find('.form-success').length){
+            var $formSucces = $('<div class="form-success"></div>');
+            form.append($formSucces);
+        }
         
-            target.removeClass('success').next('label').removeClass('stayup');
-            
+        form.find('.form.error').remove();
+        form.find('.form-success').html(response.success);
+        form.addClass('success');
+    }
+    
+    if(response.error){
+        if(!form.find('.form-error').length){
+            var $formError = $('<div class="form-error"></div>');
+            form.append($formError);
+        }
+        
+        form.find('.form-error').html(response.error);
+        form.addClass('error');
+        
+    }
+    
+}
+
+var validateForm = function(form){
+
+    var ready = true;
+    
+    form.find('input').each(function(){
+        
+        if($(this).hasClass('error')){
+            ready = false;
         }
     
-    else if(target.is('input[type="checkbox"], input[type="radio"]')){console.log('not valid field type');}
+    });
     
-    else{
-        
-        target.addClass('success').next('label').addClass('stayup');
+    if (ready){
+        return true;
     }
-
+    else{
+        return false
+    }
 }
 
 var validateEmail = function(email) {
@@ -28,7 +67,7 @@ var formJsInit = function(){
         checkSuccess($(this));
     });
     
-    //autosize($('form textarea:not(.no-autosize)'));
+    autosize($('form textarea:not(.no-autosize)'));
 
     // Check for allerede udfyldt felter ved sideload
     $('form input, form textarea').each(function(){
@@ -58,23 +97,55 @@ var formJsInit = function(){
 
     });
     
-    // Keyup validering
-    $('form').off().on('keyup',function(e){
     
-        var target = $(e.target);
+    $('form').off().on({
         
-        // Fjern error og success
-        target.removeClass('error').removeClass('success');
+        keyup : function(e){
+    
+            var target = $(e.target);
+
+            // Fjern error og success
+            target.removeClass('error').removeClass('success');
+
+            if(target.is('input[type="number"]')){
+
+                var value = target.val().replace(/[^0-9]/g, '');
+
+                target.val(value);
+
+            }
+
+        },
         
-        if(target.is('input[type="number"]')){
-        
-            var value = target.val().replace(/[^0-9]/g, '');
+        click : function(e){
+            var t = $(e.target);
             
-            target.val(value);
-        
+            if(t.is('.submit')){
+                e.preventDefault();
+                
+                
+                var form = t.parents('form'),
+                    action = form.attr('action'),
+                    formData = form.serialize();
+                
+                if(validateForm(form) && !form.hasClass('loading') && !form.hasClass('success')){
+                    
+                    form.addClass('loading');
+                    
+                    $.ajax({
+                                url : action,
+                                type : 'POST',
+                                data : formData,
+                                dataType : 'json',
+                                success : function(response){
+                                    formHandleResponse(response,form);
+                                },
+                            });
+                    
+                }
+            }
         }
-        
-    })
+     });
 
 }
 

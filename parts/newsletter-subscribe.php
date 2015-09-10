@@ -2,7 +2,9 @@
     <article class="inner read-width">
         <h3>Modtag nyhedsbrev</h3>
         <p>Modtag FSD’s nyhedsbrev og hold dig orienteret om kommende arrangementer og relevante begivenheder</p>
-        <form>
+        <form id="nl-form" action="<?php echo admin_url('admin-ajax.php'); ?>">
+            <input type="hidden" name="action" value="smamo_newsletter"/>
+            <?php wp_nonce_field('smamo_newsletter','smamo_newsletter_nonce'); ?>
             <div>
                 <span class="form-heading">Modtager:</span>
             </div>

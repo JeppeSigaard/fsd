@@ -41,6 +41,23 @@ input:-webkit-autofill {
         margin:auto;
     }
     
+    &.loading{
+        background-image:url(../libs/img/loading.gif);
+        background-position: center;
+        background-repeat:no-repeat;
+        
+        input,label,.submit{
+            opacity:.2;
+            pointer-events: none;
+        }
+    }
+    
+    &.success{
+        input,label,.submit{
+            display: none;
+        }
+    }
+    
     .spacer{
         position:relative;
         display: block;
@@ -143,7 +160,7 @@ input:-webkit-autofill {
     
     /* SELECT */
     $select-width:100%;
-    $select-height:$base-margin * 2.5;
+    $select-height:35px;
     $select-background:$fsd-light;
     $select-color:$fsd-black;
 
@@ -168,6 +185,7 @@ input:-webkit-autofill {
         right: 0;
         bottom: 0;
         left: 0;
+        z-index:10;
         background-color: transparent;
         transition:background-color $input-transition-time, border-bottom $input-transition-time;
         //padding: 0px 15px;
@@ -187,7 +205,7 @@ input:-webkit-autofill {
             border-color: rgba($select-color,.5) transparent transparent transparent;
             position: absolute;
             top: 13px;
-            right: $base-margin;
+            right: 13px;
         }
         &:hover {
             //background-color: darken($select-background, 2);
@@ -202,20 +220,22 @@ input:-webkit-autofill {
     }
 
     .select-options {
+        max-height: 400px;
+        overflow: scroll;
         display: none;
         position: absolute;
         top: 100%;
         right: 0;
         left: 0;
         top:$select-height;
-        z-index: 999;
+        z-index: 100000;
         margin: 0;
         padding: 0;
         list-style: none;
         background-color: $select-background;
         li {
             margin: 0;
-            padding: $base-margin * .8 0;
+            padding:10px 0;
             text-indent: $base-margin;
             font-weight: 400;
             //border-top: 1px solid darken($select-background, 10);

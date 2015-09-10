@@ -1,4 +1,6 @@
 // @koala-append 'assets/flickity.js';
+// @koala-append 'assets/styledselect.js';
+// @koala-append 'assets/autosize.js';
 // @koala-append 'components/form.js';
 // @koala-append 'modules/header-click.js';
 // @koala-append 'modules/site-nav-click.js';
