@@ -71,4 +71,47 @@ jQuery(function($){
     });
     
     smamo_aside_control.selectListen();
+
+	var smamo_excel_export = {
+		get get(){
+			var vars= {};
+			if(window.location.search.length!==0)
+				window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value){
+					key=decodeURIComponent(key);
+					if(typeof vars[key]==="undefined") {vars[key]= decodeURIComponent(value);}
+					else {vars[key]= [].concat(vars[key], decodeURIComponent(value));}
+				});
+			vars.action = 'smamo_excel_export';
+			return vars;
+		},
+
+		ajax_export : function(){
+
+			$.ajax({
+				type: "POST",
+				url: 'admin-ajax.php',
+				data: smamo_excel_export.get,
+				success: function(response){
+				console.log(response);
+				},
+				dataType: 'json'
+			});
+		},
+	};
+
+	// Tilføj export til excel
+	if($('body').is('.edit-php.post-type-medlem') || $('body').is('.edit-php.post-type-tilmelding')){
+
+		var ul = $('.subsubsub'),
+			li = $('<li class="excel-export"> | <a href="#" class="excel-export">Exportér til Excel</a></li>');
+
+		ul.append(li);
+
+		li.on('click',function(e){
+			e.preventDefault();
+			if(confirm('Eksportér nuværende sortering til excel? Alle matchende poster medtages')){
+				smamo_excel_export.ajax_export();
+			}
+		});
+	}
 });

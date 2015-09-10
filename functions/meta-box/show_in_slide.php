@@ -14,7 +14,6 @@ $mb[] = array(
             'id'    => "show_in_slide",
             'type'  => 'checkbox',
             'std'   => 0,
-            'desc'  => '<br/><br/>Eller indstil automatisk tilføjelse efter dato i temaindstillinger.'
-            ),
+      	),
     ),
 );
