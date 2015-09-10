@@ -1,0 +1,21 @@
+.front-page-article{
+    h1{
+        font-size:175%;
+        
+        @media only screen and(min-width:480px){
+            font-size:200%;
+        }
+        
+        @media only screen and(min-width:768px){
+            font-size:225%;
+        }
+        
+        @media only screen and(min-width:960px){
+            font-size:250%;
+        }
+        
+        font-weight:$base-font-weight-2;
+        line-height: 1.2;
+        margin-bottom:$base-margin;
+    }
+}

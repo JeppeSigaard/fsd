@@ -1,0 +1,38 @@
+.search-no-dice{
+    background-color: white;
+    padding: 50px $base-margin 70px;
+    margin-top: 30px;
+    
+    input[type="text"] {
+        background: #f0f0f0;
+        color: inherit;
+        width:calc(100% - 50px);
+        font-size: inherit;
+        font-family: inherit;
+        font-weight: inherit;
+        padding: 0px 20px;
+        border: none;
+        outline: none;
+        display: inline-block;
+        height: 45px;
+        line-height: 45px;
+        vertical-align: top;
+    }
+    
+    input[type="submit"]{
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 25px;
+        background-color: #333;
+        -webkit-transition: background-color 120ms;
+        transition: background-color 120ms;
+        font-size: 0;
+        width: 50px;
+        height:45px;
+        border:none;
+        float:right;
+        cursor: pointer;
+        outline: none;
+        background-image: url(../libs/icons/search.svg);
+    }
+}

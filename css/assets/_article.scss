@@ -1,0 +1,104 @@
+body article{
+    
+    .no-margin{
+        @extend %no-margin;
+    }
+    
+    
+    a.button,
+    a.button-dir,
+    a.playbtn{
+        
+        margin-top: $base-margin;
+        
+        @media only screen and(min-width:640px){
+            margin-right: $base-margin;
+            
+            &:last-child{
+                margin-right: auto;
+            }
+        }
+    }
+    
+    header{
+        background:none;
+    }
+
+    line-height:$base-line-height;
+
+    h1{
+        //font-size:300%;
+        //margin-bottom:$text-margin;
+        //line-height:1.2;
+    }
+
+    h2{
+        font-size: 250%;
+        margin-bottom:$text-margin;
+        line-height:1.2;
+        font-weight:400;
+    }
+
+    h3{
+        font-size: 200%;
+        margin-bottom:$text-margin;
+        line-height:1.2;
+        font-weight:400;
+    }
+
+    h4{
+        font-size: 175%;
+        margin-bottom:$text-margin;
+        line-height:1.2;
+    }
+
+    h5{
+        font-size: 150%;
+        margin-bottom:$text-margin;
+        line-height:1.2;
+    }
+
+    p{
+        margin-bottom: $text-margin;
+        
+        &.large{
+            font-size:110%;
+        }
+    }
+
+    ul{
+        padding-left:20px;
+        list-style: disc;
+        margin-bottom: $text-margin;
+    }
+
+    ol{
+        padding-left: 20px;
+        list-style: decimal;
+        margin-bottom: $text-margin;
+    }
+
+    ul li, ol li{
+        margin-bottom:$text-margin;
+    }
+
+    strong{
+        font-weight:bold;
+    }
+
+    em{
+        font-style: italic;
+    }
+    
+    a:active, 
+    a, 
+    a:visited, 
+    a:hover{
+        text-decoration: underline;
+        transition:color 120ms;
+    }
+    
+    a:hover{
+       color:$fsd-color-red;
+    }
+}

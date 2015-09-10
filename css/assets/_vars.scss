@@ -1,0 +1,39 @@
+@charset "utf-8";
+
+// FONT
+$base-font: 'Source Sans Pro', sans-serif;
+$base-font-weight: 300;
+$base-font-weight-2: 400;
+$base-font-weight-3: 600;
+$text-margin:.7em;
+
+$base-font-size: 14px;
+$base-font-size-480: 14px;
+$base-font-size-640: 15px;
+$base-font-size-960: 16px;
+$base-line-height:1.5;
+
+
+// Højde bredde basic
+$base-margin:20px;
+$page-width-max:1280px;
+$read-width-max:640px;
+
+
+
+// Farver
+
+$fsd-black: #333333;
+$fsd-light: #f0f0f0;
+$fsd-light-2: #e0e0e0;
+$fsd-white: #ffffff;
+
+$fsd-color-red: #E13215;
+$fsd-color-yellow: #b8bc4e;
+$fsd-color-green: #58b47b;
+$fsd-color-blue: #1563e1;
+
+
+// Skygge
+
+$base-shadow: 1px 1px 2px 0px rgba($fsd-black,.2) ;

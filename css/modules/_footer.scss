@@ -1,0 +1,19 @@
+.site-footer{
+    transform:translate3d(0,0,0);
+    @extend section;
+    background-color:$fsd-black;
+    color:$fsd-light-2;
+    text-align: center;
+    position: relative;
+    z-index:20;
+    
+    span,a{
+        display: block;
+        margin:$base-margin auto 0;
+    }
+    
+    a{
+        max-width:200px;
+        
+    }
+}

@@ -1,0 +1,36 @@
+.fsd-logo{
+    
+    .logo-shadows{
+      
+        fill:$fsd-light;
+        stroke:#151515;
+        stroke-width:1;
+       
+    }
+    
+    .logo-foreground{
+        fill:$fsd-color-red;
+        stroke:#151515;
+        stroke-width:.25;
+    }
+    
+    .logo-lines{
+       
+        fill:$fsd-white;
+        stroke:#151515;
+        stroke-width:1;
+    }
+}
+
+
+.site-footer .fsd-logo {
+    
+    .logo-foreground{
+        fill:$fsd-white;
+        stroke-width:1;
+    }
+    
+    .logo-shadows{
+        fill:$fsd-light-2;
+    }
+}

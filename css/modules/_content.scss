@@ -1,0 +1,14 @@
+.content{
+    
+    min-height:100vh;
+    position:relative;
+    z-index:1;
+    background:$fsd-light-2;
+    
+    @media only screen and(min-width:960px){
+        
+        margin-right:$site-nav-width;
+        
+    }
+    
+}

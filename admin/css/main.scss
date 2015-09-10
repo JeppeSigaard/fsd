@@ -1,0 +1,7 @@
+#aside_control .rwmb-clone .rwmb-field{
+    display: none;
+    
+    &.show, &.always-show{
+        display: block;
+    }
+}

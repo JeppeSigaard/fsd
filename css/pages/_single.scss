@@ -1,0 +1,40 @@
+main.main-single{
+    padding-top:50px;
+}
+.content main article{
+    @extend .list-item;
+    margin-top:0;
+    position: relative;
+    background:$fsd-white;
+    padding:$base-margin/2 $base-margin/2 $base-margin;
+    @media only screen and(min-width:640px){
+        padding:$base-margin $base-margin $base-margin*2;
+    }
+    
+    .single-img{
+        position:relative;
+        height:0;
+        padding-bottom:50%;
+        background-color:$fsd-black;
+        background-size:cover;
+        background-position:center;
+        background-repeat:no-repeat;
+    }
+    
+    .no-img{
+        position:relative;
+        height:75px;
+        margin: 0 -10px;
+
+    }
+    
+    .post-date{
+        line-height: 1;
+    }
+    
+    .post-title{
+        padding:$base-margin 0;
+        font-weight:$base-font-weight-2;
+        font-size:150%;
+    }
+}
