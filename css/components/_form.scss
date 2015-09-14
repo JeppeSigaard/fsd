@@ -391,5 +391,27 @@ input:-webkit-autofill {
     
 }
 
+@keyframes error-jump-in{
+    from{
+        top:-30px;
+        opacity:0;
+    }
+    to{
+        top:0;
+        opacity:1;
+    }
+}
 
-
+.form-error {
+    display: block;
+    background-color: $fsd-color-red;
+    text-align: center;
+    padding: 10px 0px;
+    color: white;
+    font-weight: 700;
+    animation:error-jump-in;
+    animation-direction: normal;
+    animation-duration: 500ms;
+    animation-iteration-count: 1;
+    animation-timing-function: cubic-bezier(.04, .72, .27, 1.19);
+}
