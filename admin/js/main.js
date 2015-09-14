@@ -92,7 +92,11 @@ jQuery(function($){
 				url: 'admin-ajax.php',
 				data: smamo_excel_export.get,
 				success: function(response){
-				console.log(response);
+				    if(response.file){
+                        
+                        window.location.href = response.file;
+                    
+                    }
 				},
 				dataType: 'json'
 			});

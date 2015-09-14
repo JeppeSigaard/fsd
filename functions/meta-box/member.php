@@ -65,6 +65,24 @@ $mb[] = array(
         ),
         
         array(
+            'id'    => 'medlem_address',
+            'name'  => __('Adresse','rwmb'),
+            'type'  => 'text',
+        ),
+        
+        array(
+            'id'    => 'medlem_post',
+            'name'  => __('Postnummer','rwmb'),
+            'type'  => 'text',
+        ),
+        
+        array(
+            'id'    => 'medlem_by',
+            'name'  => __('By','rwmb'),
+            'type'  => 'text',
+        ),
+        
+        array(
             'name'  => __( 'Arbejdstelefon', 'rwmb' ),
             'id'    => "medlem_phone",
             'type' => 'text',
