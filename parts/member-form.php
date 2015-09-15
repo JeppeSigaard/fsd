@@ -236,6 +236,10 @@
         <label for="position">Stilling</label>
     </div>
     <div>
+        <input name="work_since" type="text">
+        <label>Ansat siden</label>
+    </div>
+    <div>
         <h4>Personlige oplysninger</h4>
     </div>
     <div>

@@ -30,6 +30,10 @@ function smamo_ajax_signup(){
         sendError($response,'Vælg en stilling');
     }
     
+    if(!isset($_POST['work_since']) || $_POST['work_since'] === ''){
+        sendError($response,'Indtast ansat siden');
+    }
+    
     if(!isset($_POST['birthday']) || $_POST['birthday'] === ''){
         sendError($response,'Indtast din fødselsdag');
     }
@@ -54,6 +58,7 @@ function smamo_ajax_signup(){
     $email = wp_strip_all_tags($_POST['email']);
     $work = wp_strip_all_tags($_POST['work']);
     $position = wp_strip_all_tags($_POST['position']);
+    $work_since = strtotime(wp_strip_all_tags($_POST['work_since']));
     $birthday = strtotime(wp_strip_all_tags($_POST['birthday']));
     $phone = strtotime(wp_strip_all_tags($_POST['phone']));
     $address = wp_strip_all_tags($_POST['address']);
@@ -81,6 +86,7 @@ function smamo_ajax_signup(){
     update_post_meta($new,'medlem_email',$email);
     update_post_meta($new,'medlem_work',$work);
     update_post_meta($new,'medlem_position',$position);
+    update_post_meta($new,'medlem_work_since',$work_since);
     update_post_meta($new,'medlem_birthday',$birthday);
     update_post_meta($new,'medlem_phone',$phone);
     update_post_meta($new,'medlem_address',$address);

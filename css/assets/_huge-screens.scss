@@ -3,12 +3,12 @@
     .page-wrap{
         
         .content{
-            width: calc(50% + 350px);
-            margin-right: 0;
+            width: calc(50% + 450px);
+            margin-left: calc(50% - 450px);
         }
         
         .site-nav{
-            width: calc(50% - 350px);
+            width: calc(50% - 450px);
         }
     }
 

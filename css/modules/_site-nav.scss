@@ -1,4 +1,4 @@
-$site-nav-width:280px;
+$site-nav-width:220px;
 
 .site-nav{
     position:fixed;
@@ -29,8 +29,8 @@ $site-nav-width:280px;
     
 
     @media only screen and(min-width:960px){
-        right:0;
-        transition:right 0ms;
+        left:0;
+        transition:left 0ms;
         box-shadow: none;
     }
     
@@ -85,7 +85,8 @@ $site-nav-width:280px;
     a{
         display: block;
         transition: color 120ms;
-        padding:15px 0px;
+        padding:12px 0px;
+        line-height:1.2;
         
         &:hover{
             color: $fsd-color-red;
