@@ -75,7 +75,7 @@ if (is_array($aside_control)) : foreach($aside_control as $key => $aside) :
 
         // Undersider
         if($aside['list_show_type'] === 'underside'){
-            $list_section_class = 'list-sub-pages';
+            $list_section_class = ' list-sub-pages';
             $list_args['post_type'] = 'page';
             $list_args['orderby']  = 'menu_order';
             $list_args['order'] = 'DESC';
@@ -84,7 +84,7 @@ if (is_array($aside_control)) : foreach($aside_control as $key => $aside) :
 
         // Seneste nyheder
         if($aside['list_show_type'] === 'post'){
-            $list_section_class = 'list-latest-news';
+            $list_section_class = ' list-latest-news';
             $list_args['post_type'] = 'post';
             $list_header = 'Seneste nyt';
             $list_args['posts_per_page'] = ($aside['list_num_posts'] !== '') ? $aside['list_num_posts']: -1;

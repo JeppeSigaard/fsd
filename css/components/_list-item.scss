@@ -3,6 +3,10 @@ $arrow-bg:rgba($fsd-white,.4);
 $arrow-hover-bg:rgba($fsd-color-red,.3);
 $arrow-transition:120ms;
 
+.list-sub-pages .list-item:first-of-type{
+    margin-top:0;
+}
+
 .list-item{
     @extend %font-size;
     background:$fsd-white;
@@ -129,7 +133,8 @@ $arrow-transition:120ms;
     }
     
     .list-item-excerpt{
-       line-height:$base-line-height;
+        line-height:$base-line-height;
+        font-weight:$base-font-weight-2;
     }
     
 }

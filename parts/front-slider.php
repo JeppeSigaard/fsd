@@ -18,7 +18,7 @@ $slider_args = array(
             
                 while ($slide_query->have_posts() ) : $slide_query->the_post(); 
                 
-                $image_url = wp_get_attachment_image_src( get_post_thumbnail_id(get_the_ID()), 'widescreen' );
+                $image_url = wp_get_attachment_image_src( get_post_thumbnail_id(get_the_ID()), 'cinemascope' );
                 
                 $date_1 = get_the_date('d', get_the_ID());
                 $date_2 = get_the_date('m Y', get_the_ID());
