@@ -7,16 +7,16 @@ jQuery(function($){
         makeChange : function(t){
         
             if(t.val() === 'quick_links'){
-                t.parents('.rwmb-clone').children('.quick_links_field').addClass('show');
                 t.parents('.rwmb-clone').children('.list_field').removeClass('show');
                 t.parents('.rwmb-clone').children('.member_list_field').removeClass('show');
+                t.parents('.rwmb-clone').children('.quick_links_field').addClass('show');
 
             }
 
             else if(t.val() === 'list'){
                 t.parents('.rwmb-clone').children('.quick_links_field').removeClass('show');
-                t.parents('.rwmb-clone').children('.list_field').addClass('show');
                 t.parents('.rwmb-clone').children('.member_list_field').removeClass('show');
+                t.parents('.rwmb-clone').children('.list_field').addClass('show');
             }
 
             else if(t.val() === 'member_list'){
