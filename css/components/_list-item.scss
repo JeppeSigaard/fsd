@@ -151,11 +151,17 @@ $arrow-transition:120ms;
                 border:5px solid $fsd-light-2;
                 vertical-align: top;
                 
-                &.type-medlem .inner{
+                .inner{
                     padding-bottom: 125%;
                     height: 0;
                     
-                     &:hover:before{
+                    &:before{
+                        height:40%;
+                    }
+                }
+                
+                &.type-medlem .inner{
+                    &:hover:before{
                          background-color: $arrow-bg;
                     }
                     
