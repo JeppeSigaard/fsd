@@ -25,6 +25,13 @@ $arrow-transition:120ms;
         .list-item-header{
             font-size:125%;
         }
+        
+        .inner:before,
+        .inner .list-item-img:before,
+        .inner .list-item-img:after{
+            display: none;
+        }
+        
     }
     
     
