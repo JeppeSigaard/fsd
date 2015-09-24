@@ -92,6 +92,20 @@ if (is_array($aside_control)) : foreach($aside_control as $key => $aside) :
             $list_args['post_type'] = 'post';
             $list_args['posts_per_page'] = ($aside['list_num_posts'] !== '') ? $aside['list_num_posts']: -1;
         }
+
+        // Referater
+        if($aside['list_show_type'] === 'referat') {
+            $list_args['post_type'] = 'referat';
+            $list_args['posts_per_page'] = ($aside['list_num_posts'] !== '') ? $aside['list_num_posts']: -1;
+            $post_list_class .= ' type-file';
+        }
+
+        // Rapport
+        if($aside['list_show_type'] === 'rapport') {
+            $list_args['post_type'] = 'rapport';
+            $list_args['posts_per_page'] = ($aside['list_num_posts'] !== '') ? $aside['list_num_posts']: -1;
+            $post_list_class .= ' type-file';
+        }
         
     
     $i= 0; $list_loop = new WP_Query($list_args); if ($list_loop->have_posts()) : ?>

@@ -147,7 +147,7 @@ $arrow-transition:120ms;
 }
 
 @media only screen and(min-width:540px) and (max-width:640px){
-        .list-split{
+        .list-split:not(.type-rapport,.type-referat){
             
             font-size:0;
             margin:0px -5px;
@@ -347,6 +347,55 @@ $arrow-transition:120ms;
 
 
 
+
+.list-item.type-rapport,
+.list-item.type-referat{
+    
+    padding-bottom:$base-margin*2;
+    
+    .list-item-img{
+        background:transparent;
+        padding-bottom: 0;
+        height:80px;
+    }
+    
+    .post-date{
+        left:-10px;
+        width:70px;
+    }
+    
+    .list-item-header{
+        position: absolute;
+        top:0;
+        left:60px;
+        background:transparent;
+    }
+    
+    @media only screen and(min-width:640px){
+        
+        padding-bottom:$base-margin/2;
+        
+        .list-item-img{
+            padding-bottom: 25%;
+            height:0;
+        }
+
+        .post-date{
+            top:0;
+            left:0;
+        }
+
+
+        .list-item-header,
+        .list-item-excerpt{
+            left:15%;
+            width:85%;
+        }
+    }
+    
+    
+    
+}
 
 
 

@@ -104,6 +104,8 @@ $mb[] = array(
                         'events_old' => 'Tidligere Arrangementer',
                         'underside' => 'Denne sides undersider',
                         'post' => 'Seneste nyheder',
+                        'referat'   => 'Referater',
+                        'rapport'   => 'Vejledninger og rapporter',
                     ),
                 ),
 

@@ -12,6 +12,7 @@ function smamo_add_boxes(){
     require 'meta-box/event.php';
     require 'meta-box/show_thumbnail.php';
     require 'meta-box/forms.php';
+    require 'meta-box/attach_files.php';
     
     
     return $mb;

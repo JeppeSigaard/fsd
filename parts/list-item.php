@@ -28,13 +28,16 @@ if('medlem' !== get_post_type(get_the_ID())) :
 </li>
 
 
-<?php else : ?>
+<?php else :
+$post_class = 'list-item';
+$post_class .= (has_post_thumbnail()) ? ' has-img': ' no-img';
 
-<li <?php post_class('list-item'); ?>>
+     ?>
+<li <?php post_class($post_class); ?>>
     <div class="inner">
-        <div class="list-item-img" <?php echo (is_array($image_url)) ? 'style="background-image:url('.$image_url[0].');"' : ''?>>
-            
-        </div>
+        <?php if (has_post_thumbnail()) :  ?>
+        <div class="list-item-img" <?php echo (is_array($image_url)) ? 'style="background-image:url('.$image_url[0].');"' : ''?>></div>
+        <?php endif; ?>   
         <header class="list-item-header"><?php the_title(); ?></header>
         
         <article class="list-item-excerpt">

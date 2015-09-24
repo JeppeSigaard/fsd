@@ -7,3 +7,4 @@ if ('page' !== get_post_type(get_the_ID()) || get_post_meta(get_the_ID(),'show_t
 <?php endif; endif; ?>
 <h1 class="post-title"><?php the_title(); ?></h1>
 <?php the_content(); ?>
+<?php get_template_part('parts/post','attachment'); ?>
