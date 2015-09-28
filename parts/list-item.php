@@ -35,14 +35,12 @@ $post_class .= (has_post_thumbnail()) ? ' has-img': ' no-img';
      ?>
 <li <?php post_class($post_class); ?>>
     <div class="inner">
-        <?php if (has_post_thumbnail()) :  ?>
         <div class="list-item-img" <?php echo (is_array($image_url)) ? 'style="background-image:url('.$image_url[0].');"' : ''?>></div>
-        <?php endif; ?>   
         <header class="list-item-header"><?php the_title(); ?></header>
         
         <article class="list-item-excerpt">
             <?php if (in_array(5,wp_get_post_terms(get_the_ID(),'gruppe',array('fields' => 'ids')))) : ?>
-            <div class="best-post"><?php echo get_post_meta(get_the_ID(),'best_post',true) ?></div>
+            <div class="best-post"><?php echo get_post_meta(get_the_ID(),'medlem_best_post',true) ?></div>
             <?php endif; ?>
             <div><?php echo get_post_meta(get_the_ID(),'medlem_position',true) ?></div>
             <div><strong><?php echo get_post_meta(get_the_ID(),'medlem_work',true) ?></strong></div>

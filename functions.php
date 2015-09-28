@@ -19,3 +19,4 @@ require 'functions/scripts.php';
 require 'functions/admin.php';
 require 'functions/excerpt-length.php';
 require 'functions/ajax.php';
+require 'functions/notify.php';

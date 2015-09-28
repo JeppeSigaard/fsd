@@ -144,7 +144,7 @@ if (is_array($aside_control)) : foreach($aside_control as $key => $aside) :
     $list_args = array(
         'post_type' => 'medlem',
         'posts_per_page' => ($aside['list_num_posts'] !== '') ? $aside['list_num_posts'] : -1,
-        'orderby'   => 'menu_order',
+        'orderby'   => 'post_date',
         'order' => 'ASC',
     );
 
