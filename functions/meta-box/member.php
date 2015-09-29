@@ -81,6 +81,12 @@ $mb[] = array(
         ),
         
         array(
+            'name'  => __( 'Mobiltelefon', 'rwmb' ),
+            'id'    => "medlem_mobile",
+            'type' => 'text',
+        ),
+        
+        array(
             'name'  => __( 'E-mail', 'rwmb' ),
             'id'    => "medlem_email",
             'type' => 'text',
