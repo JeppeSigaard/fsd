@@ -5,8 +5,8 @@ function smamo_add_rapport() {
 	register_post_type( 'rapport', array(
 
         'menu_icon' 		 => 'dashicons-analytics',
-		'public'             => false,
-		'publicly_queryable' => false,
+		'public'             => true,
+		'publicly_queryable' => true,
 		'show_ui'            => true,
 		'show_in_menu'       => true,
 		'query_var'          => true,

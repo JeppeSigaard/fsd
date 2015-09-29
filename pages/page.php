@@ -4,7 +4,7 @@
     <article <?php post_class('read-width') ?>>
         <?php get_template_part('parts/content','page'); ?>
         <?php if(get_post_meta(get_the_ID(),'show_signup_form',true) === '1'){get_template_part('parts/member','form'); } ?>
-        <?php if(get_post_meta(get_the_ID(),'show_newsletter_form',true) === '1'){get_template_part('parts/newsletter','subscribe'); } ?>
+        <?php if(get_post_meta(get_the_ID(),'show_newsletter_form',true) === '1'){get_template_part('parts/inline','newsletter'); } ?>
     </article>
     <?php endwhile; ?>
     

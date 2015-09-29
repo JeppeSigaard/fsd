@@ -22,8 +22,8 @@
                     <div class="logo">
                         <?php include get_template_directory().'/libs/img/logo.svg'; ?>
                     </div>
-                    <span class="page-title-da">Foreningen For Sygehusmaskinmestre i Danmark</span>
-                    <span class="page-title-en">The Danish Association of Hospital Engineers</span>
+                    <span class="page-title-da"><?php echo get_theme_mod('stem_navn'); ?></span>
+                    <span class="page-title-en"><?php echo get_theme_mod('stem_navn_engelsk'); ?></span>
                 </a>
                 <div class="header-bar-nav">
                     <form action="<?php bloginfo('url') ?>">

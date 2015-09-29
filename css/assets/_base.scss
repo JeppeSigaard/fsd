@@ -2,11 +2,11 @@ html,body{
     
     font-family:$base-font;
     background:$fsd-white;
-    color:$fsd-black;
+    color:$fsd-black-2;
     font-weight: $base-font-weight;
     @extend %font-size;
     box-sizing:border-box;
-    text-rendering: optimizeLegibility;
+    text-rendering: geometricPrecision;
     backface-visibility: hidden;
     -webkit-text-size-adjust: 100%;
     line-height: 1;
@@ -16,7 +16,6 @@ html,body{
     *{
         box-sizing:inherit;
         backface-visibility: inherit;
-        text-rendering: inherit;
     }
     
 }

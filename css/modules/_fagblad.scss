@@ -1,0 +1,67 @@
+.fagblad-cont {
+	width: 100%;
+	clear: both;
+	display: block;
+	overflow: visible;
+	padding: 10px 0px;
+	}
+
+.fagblad-cont br{
+	display:none;
+	}
+
+.fagblad-cont label {
+	display: block;
+	padding: 15px;
+	color: #fff;
+	font-size: 120%;
+	margin-top: 30px;
+	background: $fsd-color-red;
+	}
+
+.fagblad-cont a label {
+	padding: 5px 36px;
+	opacity: 0;
+	position: absolute;
+	margin-top: -39px;
+	margin-left: 0px;
+	z-index: 100;
+	font-style: normal;
+    left:10px;
+    font-size:100%;
+    right:10px;
+	background: $fsd-color-red;
+	transition: .5s;
+    display: block;
+    position: absolute;
+	}
+
+.fagblad-cont a:hover label {
+	opacity:1;
+	}
+
+.fagblad-cont a{
+	display: inline-block;
+	float: left;
+	margin: 10px 0px;
+	padding: 20px 20px;
+	transition:.5s;
+    display: block;
+    width:50%;
+    position:relative;
+
+    @media only screen and(min-width:640px){
+        width:calc(100% / 3);
+    }
+
+	}
+
+
+.fagblad-cont a:hover, a.fagblad-latest:hover{
+	box-shadow:0pc 0pc 15px #ddd;
+}
+
+.fagblad-cont a img{
+	width:calc(100% - 20px);
+    margin:10px;
+	}

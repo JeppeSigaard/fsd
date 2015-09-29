@@ -31,15 +31,7 @@ $mb[] = array(
         array(
             'name'  => __( 'Region', 'rwmb' ),
             'id'    => "medlem_region",
-            'type' => 'select_advanced',
-            'placeholder' => __('Vælg region'),
-            'options' => array(
-                'nord' => 'Nordjylland',
-                'midt' => 'Midtjylland',
-                'syd' => 'Syddanmark',
-                'hovedstad' => 'Hovedstaden',
-                'sjaelland' => 'Sjælland',
-            ),
+            'type' => 'text',
         ),
         
         array(
@@ -50,13 +42,13 @@ $mb[] = array(
         array(
             'name'  => __( 'Ansat siden', 'rwmb' ),
             'id'    => "medlem_work_since",
-            'type' => 'date',
+            'type' => 'text',
         ),
         
         array(
             'name'  => __( 'Fødselsdato', 'rwmb' ),
             'id'    => "medlem_birthday",
-            'type' => 'date',
+            'type' => 'text',
         ),
         
         array(
@@ -64,6 +56,24 @@ $mb[] = array(
             'type' => 'divider',
         ),
         
+        array(
+            'id'    => 'medlem_address',
+            'name'  => __('Adresse','rwmb'),
+            'type'  => 'text',
+        ),
+
+        array(
+            'id'    => 'medlem_post',
+            'name'  => __('Postnummer','rwmb'),
+            'type'  => 'text',
+        ),
+
+        array(
+            'id'    => 'medlem_by',
+            'name'  => __('By','rwmb'),
+            'type'  => 'text',
+        ),
+
         array(
             'name'  => __( 'Arbejdstelefon', 'rwmb' ),
             'id'    => "medlem_phone",
@@ -97,22 +107,41 @@ $mb[] = array(
         
         array(
             'name'  => __( 'Tillidspost(er)', 'rwmb' ),
-            'id'    => "medlem_post",
-            'type' => 'select_advanced',
-            'placeholder' => __('Tilføj tillidspost','rwmb'),
-            'clone' => true,
-            'options'   => array(
-                'bestyrelse' => 'Bestyrelsesmedlem',
-                'brancheraad' => 'Brancherådsmedlem',
-                'udvalg' => 'Udvalgssmedlem',
-            ),
+            'id'    => "medlem_udvalg",
+            'type' => 'text',
         ),
         
         array(
             'name'  => __('Evt. bestyrelsespost i FSD','rwmb'),
-            'id'    => 'best_post',
+            'id'    => 'medlem_best_post',
             'type'  => 'text',
         ),
         
+    ),
+);
+
+
+$mb[] = array(
+    'id' => 'get_notified',
+    'title' => __( 'Modtag notifikationer', 'rwmb' ),
+    'pages' => array('medlem'),
+    'context' => 'normal',
+    'priority' => 'default',
+    'autosave' => true,
+    'fields' => array(
+
+        array(
+            'name'  => __( 'Om jubilæer', 'rwmb' ),
+            'id'    => "notify_jubilee",
+            'type' => 'checkbox',
+            'std'   => '0',
+        ),
+
+        array(
+            'name'  => __( 'Om fødselsdage', 'rwmb' ),
+            'id'    => "notify_birthday",
+            'type' => 'checkbox',
+            'std'   => '0',
+        ),
     ),
 );

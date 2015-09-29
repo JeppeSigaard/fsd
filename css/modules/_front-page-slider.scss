@@ -1,3 +1,5 @@
+$front-page-slider-height:40%;
+
 .front-page-slider{
     border:$base-margin/2 solid $fsd-light;
     overflow:visible;
@@ -9,10 +11,10 @@
     padding:0;
     .inner{
         height:0px;
-        padding:0 0 calc(50% + 85px);
+        padding:0 0 calc($front-page-slider-height + 85px);
     
         @media only screen and(min-width:640px){
-            padding:0 0 50%;
+            padding:0 0 $front-page-slider-height;
         
         }
         
@@ -55,6 +57,8 @@
     }
     
     .list-item-img{
+        padding-bottom: $front-page-slider-height;
+
         &:before,
         &:after{
             content:none;

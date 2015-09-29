@@ -5,8 +5,8 @@ function smamo_add_referat() {
 	register_post_type( 'referat', array(
 
         'menu_icon' 		 => 'dashicons-portfolio',
-		'public'             => false,
-		'publicly_queryable' => false,
+		'public'             => true,
+		'publicly_queryable' => true,
 		'show_ui'            => true,
 		'show_in_menu'       => true,
 		'query_var'          => true,
