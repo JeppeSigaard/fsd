@@ -8,35 +8,35 @@ function smamo_add_stems( $wp_customize ) {
         'slug'=>'stem_navn', 
         'default' => '',
         'label' => __('Navn (Firmanavn)', 'smamo'),
-        'type' => 'text',
+        'type' => 'option',
     );
 
     $fields[] = array(
         'slug'=>'stem_adresse', 
         'default' => '',
         'label' => __('Adresse', 'smamo'),
-        'type' => 'text',
+        'type' => 'option',
     );
 
     $fields[] = array(
         'slug'=>'stem_post', 
         'default' => '',
         'label' => __('Postnummer', 'smamo'),
-        'type' => 'text',
+        'type' => 'option',
     );
 
     $fields[] = array(
         'slug'=>'stem_by', 
         'default' => '',
         'label' => __('By', 'smamo'),
-        'type' => 'text',
+        'type' => 'option',
     );
 
     $fields[] = array(
         'slug'=>'stem_cvr', 
         'default' => '',
         'label' => __('Evt. CVR - nummer', 'smamo'),
-        'type' => 'text',
+        'type' => 'option',
     );
 
     $fields[] = array(
@@ -50,7 +50,7 @@ function smamo_add_stems( $wp_customize ) {
         'slug'=>'stem_telefon', 
         'default' => '',
         'label' => __('Telefonnummer', 'smamo'),
-        'type' => 'text',
+        'type' => 'option',
     );
 
 
