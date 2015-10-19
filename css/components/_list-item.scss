@@ -18,7 +18,13 @@ $arrow-transition:120ms;
     
     &.type-medlem{
         
+        .list-item-img{
+            padding-bottom: 0;
+        }
         
+        &.gruppe-bestyrelse .list-item-img{
+            padding-bottom: 50%;
+        }
         
         .best-post{
             position: relative;
@@ -67,13 +73,11 @@ $arrow-transition:120ms;
         }
     }
     
-    &.gruppe-bestyrelse .list-item-img{
-            padding-bottom: 50%;
-        }
+    
     
     .list-item-img{
         height:0;
-        padding-bottom: 0;
+        padding-bottom: 50%;
         overflow:visible;
         position:relative;
         z-index:1;
