@@ -106,6 +106,7 @@ $mb[] = array(
                         'post' => 'Seneste nyheder',
                         'referat'   => 'Referater',
                         'rapport'   => 'Vejledninger og rapporter',
+						'link' => 'Links',
                     ),
                 ),
 
