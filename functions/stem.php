@@ -8,10 +8,8 @@ function smamo_add_stems( $wp_customize ) {
         'slug'=>'stem_navn', 
         'default' => '',
         'label' => __('Navn (Firmanavn)', 'smamo'),
-<<<<<<< HEAD
-        'type' => 'option',
-=======
         'type' => 'theme_mod',
+
     );
 
     $fields[] = array(
@@ -19,51 +17,35 @@ function smamo_add_stems( $wp_customize ) {
         'default' => '',
         'label' => __('Navn (Firmanavn) engelsk', 'smamo'),
         'type' => 'theme_mod',
->>>>>>> github/master
     );
 
     $fields[] = array(
         'slug'=>'stem_adresse', 
         'default' => '',
         'label' => __('Adresse', 'smamo'),
-<<<<<<< HEAD
-        'type' => 'option',
-=======
         'type' => 'theme_mod',
->>>>>>> github/master
     );
 
     $fields[] = array(
         'slug'=>'stem_post', 
         'default' => '',
         'label' => __('Postnummer', 'smamo'),
-<<<<<<< HEAD
         'type' => 'option',
-=======
         'type' => 'theme_mod',
->>>>>>> github/master
     );
 
     $fields[] = array(
         'slug'=>'stem_by', 
         'default' => '',
         'label' => __('By', 'smamo'),
-<<<<<<< HEAD
-        'type' => 'option',
-=======
         'type' => 'theme_mod',
->>>>>>> github/master
     );
 
     $fields[] = array(
         'slug'=>'stem_cvr', 
         'default' => '',
         'label' => __('Evt. CVR - nummer', 'smamo'),
-<<<<<<< HEAD
-        'type' => 'option',
-=======
         'type' => 'theme_mod',
->>>>>>> github/master
     );
 
     $fields[] = array(
@@ -77,11 +59,7 @@ function smamo_add_stems( $wp_customize ) {
         'slug'=>'stem_telefon', 
         'default' => '',
         'label' => __('Telefonnummer', 'smamo'),
-<<<<<<< HEAD
-        'type' => 'option',
-=======
         'type' => 'theme_mod',
->>>>>>> github/master
     );
 
 
