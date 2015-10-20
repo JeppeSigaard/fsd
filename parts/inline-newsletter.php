@@ -20,4 +20,3 @@
         <a href="#" class="submit arrow-link ">Tilmeld nyhedsbrev</a>
     </div>
 </form>
-   

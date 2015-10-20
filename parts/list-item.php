@@ -12,7 +12,25 @@ if('event' === get_post_type(get_the_ID())){
     
 }
 
-if('medlem' !== get_post_type(get_the_ID())) :
+if('hyperlink' === get_post_type(get_the_ID())) :
+?>
+
+  <li <?php post_class('list-item'); ?>>
+    <div href="<?php the_permalink(); ?>" class="inner">
+        <div class="list-item-img" <?php echo (is_array($image_url)) ? 'style="background-image:url('.$image_url[0].');"' : ''?>>
+        </div>
+        <header class="list-item-header"><?php the_title(); ?></header>
+        <div class="list-item-excerpt">
+        	<p><a href="<?php echo get_post_meta(get_the_ID(),'hyperlink_url',true); ?>"><?php echo get_post_meta(get_the_ID(),'hyperlink_url',true); ?></a></p>
+        	<p><a href="mailto:<?php echo get_post_meta(get_the_ID(),'hyperlink_emal',true); ?>"><?php echo get_post_meta(get_the_ID(),'hyperlink_email',true); ?></a></p>
+        </div>
+    </div>
+</li>
+
+
+<?php
+
+elseif('medlem' !== get_post_type(get_the_ID())) :
 
 ?>
 <li <?php post_class('list-item'); ?>>

@@ -34,13 +34,13 @@ $arrow-transition:120ms;
         .list-item-header{
             font-size:125%;
         }
-        
+
         .inner:before,
         .inner .list-item-img:before,
         .inner .list-item-img:after{
             display: none;
         }
-        
+
     }
     
     
@@ -177,7 +177,7 @@ $arrow-transition:120ms;
                         height:40%;
                     }
                 }
-                
+
                 &.type-medlem .inner{
                     &:hover:before{
                          background-color: $arrow-bg;
@@ -362,31 +362,31 @@ $arrow-transition:120ms;
 
 .list-item.type-rapport,
 .list-item.type-referat{
-    
+
     padding-bottom:$base-margin*2;
-    
+
     .list-item-img{
         background:transparent;
         padding-bottom: 0;
         height:80px;
     }
-    
+
     .post-date{
         left:-10px;
         width:70px;
     }
-    
+
     .list-item-header{
         position: absolute;
         top:0;
         left:60px;
         background:transparent;
     }
-    
+
     @media only screen and(min-width:640px){
-        
+
         padding-bottom:$base-margin/2;
-        
+
         .list-item-img{
             padding-bottom: 25%;
             height:0;
@@ -404,9 +404,9 @@ $arrow-transition:120ms;
             width:85%;
         }
     }
-    
-    
-    
+
+
+
 }
 
 

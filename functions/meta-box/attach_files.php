@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 $mb[] = array(
     'id' => 'attach_files',
@@ -8,12 +8,12 @@ $mb[] = array(
     'priority' => 'default',
     'autosave' => true,
     'fields' => array(
-       
+
         array(
             'name' => __('Tilføj filer','rwmb'),
             'id'    => 'attach_file',
             'type'  => 'file_advanced',
         ),
-           
+
     ),
 );

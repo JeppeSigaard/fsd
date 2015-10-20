@@ -1,10 +1,10 @@
-<?php 
+<?php
 
 add_action( 'init', 'smamo_add_fagblad' );
 
 function smamo_add_fagblad() {
 	register_post_type( 'fagblad', array(
-		
+
         'menu_icon' 		 => 'dashicons-businessman',
 		'public'             => true,
 		'publicly_queryable' => true,
@@ -18,7 +18,7 @@ function smamo_add_fagblad() {
 		'menu_position'      => 22,
 		'supports'           => array( 'title', 'thumbnail', 'editor'),
         'labels'             => array(
-            
+
             'name'               => _x( 'Fagblade', 'post type general name', 'smamo' ),
             'singular_name'      => _x( 'Fagblad', 'post type singular name', 'smamo' ),
             'menu_name'          => _x( 'Fagblade', 'admin menu', 'smamo' ),

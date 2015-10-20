@@ -10,50 +10,50 @@ function sendError($response,$msg){
 
 function smamo_ajax_signup(){
 
-    
-    
+
+
     $response = array();
     
     if(!isset($_POST['name']) || $_POST['name'] === ''){
         sendError($response,'Indtast venligst et navn');
     }
-    
+
     if(!isset($_POST['email']) || $_POST['email'] === ''){
         sendError($response,'Indtast venligst en email');
     }
-    
+
     if(!isset($_POST['work']) || $_POST['work'] === ''){
         sendError($response,'Vælg en arbejdsplads');
     }
-    
+
     if(!isset($_POST['position']) || $_POST['position'] === ''){
         sendError($response,'Vælg en stilling');
     }
-    
+
     if(!isset($_POST['work_since']) || $_POST['work_since'] === ''){
         sendError($response,'Indtast ansat siden');
     }
-    
+
     if(!isset($_POST['birthday']) || $_POST['birthday'] === ''){
         sendError($response,'Indtast din fødselsdag');
     }
-    
+
     if(!isset($_POST['phone']) || $_POST['phone'] === ''){
         sendError($response,'Skriv dit telefonnummer');
     }
-    
+
     if(!isset($_POST['address']) || $_POST['address'] === ''){
         sendError($response,'Indtast din adresse');
     }
-    
+
     if(!isset($_POST['post']) || $_POST['post'] === ''){
         sendError($response,'Indtast dit postnummer');
     }
-    
+
     if(!isset($_POST['by']) || $_POST['by'] === ''){
         sendError($response,'Indtast by');
     }
-    
+
     $name = wp_strip_all_tags($_POST['name']);
     $email = wp_strip_all_tags($_POST['email']);
     $work = wp_strip_all_tags($_POST['work']);
@@ -65,8 +65,8 @@ function smamo_ajax_signup(){
     $post = wp_strip_all_tags($_POST['post']);
     $by = wp_strip_all_tags($_POST['by']);
     $remarks = (isset($_POST['remarks'])) ? wp_strip_all_tags($_POST['remarks']) : '';
-    
-    
+
+
     $new = wp_insert_post(array(
         'post_title'    => $name,
         'post_type' => 'medlem',
@@ -78,7 +78,7 @@ function smamo_ajax_signup(){
         $response['error'] = 'Kunne ikke oprette medlemsskab på grund af en teknisk fejl: '. $new->get_error_message;
         echo json_encode($response);
         exit;
-        
+
     }
     
     

@@ -106,6 +106,7 @@ $mb[] = array(
                         'post' => 'Seneste nyheder',
                         'referat'   => 'Referater',
                         'rapport'   => 'Vejledninger og rapporter',
+						'link' => 'Links',
                     ),
                 ),
 
@@ -151,19 +152,19 @@ $mb[] = array(
                     'type'  => 'text',
                     'placeholder'  => __('-1 viser alle','rwmb'),
                 ),
-                
-                
+
+
                 // header
-                
+
                 array(
                     'name'  => __('Tilføj header'),
                     'id' => 'add_header',
                     'class' => 'member_list_field list_field',
                     'type' => 'text',
                     'placeholder' => 'Efterlad blank for ingen',
-                    
+
                 ),
-                
+
                 array(
                     'name'  => __('Header link'),
                     'id' => 'add_header_link',
@@ -173,7 +174,7 @@ $mb[] = array(
                     'field_type' => 'select_advanced',
                     'post_type' => 'page',
                     'placeholder' => 'Vælg en side eller angiv speciel',
-                    
+
                 ),
                 array(
                     'name'  => __('Eksternt link'),
@@ -181,7 +182,7 @@ $mb[] = array(
                     'class' => 'member_list_field list_field',
                     'type' => 'url',
                     'placeholder' => 'Link til ekstern ressource',
-                    
+
                 ),
             ),
         ),

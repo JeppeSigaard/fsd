@@ -152,9 +152,9 @@ $site-nav-width:220px;
 }
 
 @media only screen and(min-width:960px){
-    
+
     .site-nav-menu li:hover {
-        
+
         &:after{
             display: block;
             content: '';
@@ -164,17 +164,17 @@ $site-nav-width:220px;
             left: $site-nav-width/2;
             top: 0;
         }
-        
+
         > .sub-menu{
             display: block;
             position:absolute;
             background-color:white;
             left:$site-nav-width - $base-margin*2;
-            
+
             @media only screen and(min-width:1400px){
                 left: calc(100% + 40px);
             }
-            
+
             z-index:10;
             top:0;
             white-space: nowrap;
@@ -193,7 +193,7 @@ $site-nav-width:220px;
         box-shadow:none;
         padding:0 $base-margin;
         left:0;
-        
+
         white-space:normal;
     }
 

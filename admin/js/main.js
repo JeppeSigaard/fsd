@@ -93,9 +93,9 @@ jQuery(function($){
 				data: smamo_excel_export.get,
 				success: function(response){
 				    if(response.file){
-                        
+
                         window.location.href = response.file;
-                    
+
                     }
 				},
 				dataType: 'json'

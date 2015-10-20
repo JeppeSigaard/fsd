@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 /* OPRET MEDLEMSLISTE SOM EXCELFIL */
 
@@ -47,7 +47,7 @@ $objPHPExcel->setActiveSheetIndex(0)
 			->setCellValue('G1', 'Deltager i')
 			->setCellValue('H1','Tilmeldt dato')
 			->setCellValue('I1','Kommentar')
-    
+
 			->setCellValue('J1','Betalernavn')
 			->setCellValue('K1','Adresse')
 			->setCellValue('L1','Postnummer')
@@ -75,12 +75,12 @@ $args = array(
 	'post_mime_type'   => '',
 	'post_parent'      => '',
 	'post_status'      => 'publish',
-	'suppress_filters' => true ); 
+	'suppress_filters' => true );
 
 	$myposts = get_posts( $args );
-	foreach ( $myposts as $att ) : 
+	foreach ( $myposts as $att ) :
 		$i ++;
-        
+
         $deltager_i = '';
         $term_list = wp_get_post_terms($att->ID, 'begivenhed');
 		foreach($term_list as $term){
@@ -104,9 +104,9 @@ $args = array(
 			->setCellValue('O'.$i, get_post_meta($att->ID,'ref_num',true))
 			->setCellValue('P'.$i, get_post_meta($att->ID,'ean',true))
 			->setCellValue('Q'.$i, get_post_meta($att->ID,'participate',true));
-	
+
         $oldI++;
-	
+
 	endforeach;
 
 

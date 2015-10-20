@@ -5,7 +5,7 @@ function smamo_excel_export(){
     $response = array();
 
 
-    
+
     /** Error reporting */
     error_reporting(E_ALL);
     ini_set('display_errors', FALSE);
@@ -35,13 +35,13 @@ function smamo_excel_export(){
                                  ->setCategory("");
 
     if(isset($_POST['post_type']) && $_POST['post_type'] === 'medlem'){
-    
+
         $list_type_name = array(
             'upper' => 'Medlemmer',
             'lower' => 'medlemmer',
         );
-        
-        
+
+
         // Indstil header
         $objPHPExcel->setActiveSheetIndex(0)
                     ->setCellValue('A1', 'Id')
@@ -76,38 +76,38 @@ function smamo_excel_export(){
         'order'            => 'ASC',
         'post_type'        => (isset($_POST['post_type'])) ? wp_strip_all_tags($_POST['post_type']): 'post',
         'post_status'      => (isset($_POST['post_status'])) ? wp_strip_all_tags($_POST['post_status']): 'publish',
-        'suppress_filters' => true 
-    ); 
+        'suppress_filters' => true
+    );
 
         $myposts = get_posts( $args );
         if(isset($_POST['post_type']) && $_POST['post_type'] === 'medlem'){
         foreach ( $myposts as $post ) {
-            
+
             $medlem_type_name = '';
             $medlem_type = get_post_meta($post->ID,'medlem_type',true);
-            
+
             switch($medlem_type) {
                 case '0':
                     $medlem_type_name = 'Ikke registreret';
                     break;
-                    
+
                 case '1':
                     $medlem_type_name = 'Pensioneret';
                     break;
-                    
+
                 case '2':
                     $medlem_type_name = 'Ordinær';
                     break;
-                
+
                 case '3':
                     $medlem_type_name = 'Ekstraordinær';
                     break;
-                    
+
                 case '99':
                     $medlem_type_name = 'Passiv / inaktiv';
                     break;
             }
-            
+
             $member_posts = '';
             $member_posts_array = get_post_meta($post->ID,'medlem_post',true);
             if(is_array($member_posts_array)){
@@ -115,8 +115,8 @@ function smamo_excel_export(){
                     $member_posts .= $m_post.', ';
                 }
             }
-            
-           
+
+
             $i ++;
             $objPHPExcel->setActiveSheetIndex(0)
                 ->setCellValue('A'.$i, $post->ID)
@@ -126,11 +126,11 @@ function smamo_excel_export(){
                 ->setCellValue('E'.$i, get_post_meta($post->ID,'medlem_region',true))
                 ->setCellValue('F'.$i, get_post_meta($post->ID,'medlem_work_since',true))
                 ->setCellValue('G'.$i, get_post_meta($post->ID,'medlem_birthday',true))
-                
+
                 ->setCellValue('H'.$i, get_post_meta($post->ID,'medlem_address',true))
                 ->setCellValue('I'.$i, get_post_meta($post->ID,'medlem_post',true))
                 ->setCellValue('J'.$i, get_post_meta($post->ID,'medlem_by',true))
-                
+
                 ->setCellValue('K'.$i, get_post_meta($post->ID,'medlem_phone',true))
                 ->setCellValue('L'.$i, get_post_meta($post->ID,'medlem_email',true))
                 ->setCellValue('M'.$i, $medlem_type_name)
@@ -167,7 +167,7 @@ function smamo_excel_export(){
     $save_file_to = str_replace(__FILE__,$list_type_name['lower'].'-'.$titleTimeFormat.'.xls',__FILE__);
     $exports_path = '/wp-content/exports/'.$save_file_to;
     $full_path = ABSPATH.$exports_path;
-    
+
     $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel5');
     $objWriter->save($full_path);
     $callEndTime = microtime(true);

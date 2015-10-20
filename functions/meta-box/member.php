@@ -61,19 +61,19 @@ $mb[] = array(
             'name'  => __('Adresse','rwmb'),
             'type'  => 'text',
         ),
-        
+
         array(
             'id'    => 'medlem_post',
             'name'  => __('Postnummer','rwmb'),
             'type'  => 'text',
         ),
-        
+
         array(
             'id'    => 'medlem_by',
             'name'  => __('By','rwmb'),
             'type'  => 'text',
         ),
-        
+
         array(
             'name'  => __( 'Arbejdstelefon', 'rwmb' ),
             'id'    => "medlem_phone",
@@ -135,14 +135,14 @@ $mb[] = array(
     'priority' => 'default',
     'autosave' => true,
     'fields' => array(
-        
+
         array(
             'name'  => __( 'Om jubilæer', 'rwmb' ),
             'id'    => "notify_jubilee",
             'type' => 'checkbox',
             'std'   => '0',
         ),
-        
+
         array(
             'name'  => __( 'Om fødselsdage', 'rwmb' ),
             'id'    => "notify_birthday",

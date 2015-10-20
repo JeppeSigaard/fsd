@@ -106,6 +106,15 @@ if (is_array($aside_control)) : foreach($aside_control as $key => $aside) :
             $list_args['posts_per_page'] = ($aside['list_num_posts'] !== '') ? $aside['list_num_posts']: -1;
             $post_list_class .= ' type-file';
         }
+
+		// Links
+		if($aside['list_show_type'] === 'link'){
+			$list_args['post_type'] = 'hyperlink';
+            $list_args['posts_per_page'] = ($aside['list_num_posts'] !== '') ? $aside['list_num_posts']: -1;
+            $post_list_class .= ' type-link';
+			$list_args['orderby']  = 'title';
+            $list_args['order'] = 'ASC';
+		}
         
     
     $i= 0; $list_loop = new WP_Query($list_args); if ($list_loop->have_posts()) : ?>

@@ -1,11 +1,11 @@
-<?php 
+<?php
 
 // Funktion til at sende emails
 function sendEmail( $from_name, $from, $to, $subject, $message ){
-    $header = "From: ".$from_name." <".$from.">\r\n"; 
-    $header.= "MIME-Version: 1.0\r\n"; 
-    $header.= "Content-Type: text/html; charset=utf-8\r\n"; 
-    $header.= "X-Priority: 1\r\n"; 
+    $header = "From: ".$from_name." <".$from.">\r\n";
+    $header.= "MIME-Version: 1.0\r\n";
+    $header.= "Content-Type: text/html; charset=utf-8\r\n";
+    $header.= "X-Priority: 1\r\n";
     $email = wp_mail($to, $subject, $message, $header);
     return $email;
 }
@@ -20,7 +20,7 @@ function smamo_activate_notifier() {
 }
 
 function smamo_do_notifier() {
-    
+
     $time_to_event =  date('d m',strtotime('+14 day'));
 
     // Check for fødselsdage
@@ -35,7 +35,7 @@ function smamo_do_notifier() {
             $notifications[] = array(
                 'type' => 'bday',
                 'name' => get_post_meta($member->ID,'',true),
-                'date' => date('d F',strtotime($bday)).' '.date('Y'),  
+                'date' => date('d F',strtotime($bday)).' '.date('Y'),
             );
         }
     }
@@ -75,12 +75,12 @@ function smamo_do_notifier() {
 
             // fødselsdage
             if(get_post_meta($member->ID,'notify_birthday',true) === '1'){
-                $receivers_bday[] = get_post_meta($member->ID,'medlem_email',true);   
+                $receivers_bday[] = get_post_meta($member->ID,'medlem_email',true);
             }
 
             // jubilæer
             if(get_post_meta($member->ID,'notify_jubilee',true) === '1'){
-                $receivers_jubi[] = get_post_meta($member->ID,'medlem_email',true);   
+                $receivers_jubi[] = get_post_meta($member->ID,'medlem_email',true);
             }
 
         }
