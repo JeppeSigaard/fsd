@@ -14,6 +14,7 @@ function smamo_add_boxes(){
     require 'meta-box/forms.php';
     require 'meta-box/attach_files.php';
     require 'meta-box/link.php';
+    require 'meta-box/tilmelding.php';
     
     
     return $mb;

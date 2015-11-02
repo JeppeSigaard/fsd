@@ -22,3 +22,21 @@ $mb[] = array(
             ),
     ),
 );
+
+$mb[] = array(
+    'id' => 'admission',
+    'title' => __( 'Opret tilmelding', 'rwmb' ),
+    'pages' => array('event'),
+    'context' => 'side',
+    'priority' => 'default',
+    'autosave' => true,
+    'fields' => array(
+        
+        array(
+            'name'  => __( 'Tilføj formular', 'rwmb' ),
+            'id'    => "add_form",
+            'type' => 'checkbox',
+            'std' => '0',
+            ),
+    ),
+);
