@@ -121,7 +121,7 @@ $site-nav-width:220px;
         height:0;
         opacity:0;
         left:0;
-        transition-delay: 0s;
+        transition-delay: 500ms;
         transition:opacity 0s;
         overflow:hidden;
         padding-left:$base-margin;
@@ -153,19 +153,32 @@ $site-nav-width:220px;
 
 @media only screen and(min-width:960px){
 
-    .site-nav-menu li:hover {
-
+    .site-nav-menu>li{
+    
         &:after{
             display: block;
             content: '';
             position: absolute;
-            width: $site-nav-width;
-            height: 150%;
-            left: $site-nav-width/2;
-            top: 0;
+            bottom: 15px;
+            left: 0px;
+            top: 15px;
+            transition: top 0s, bottom, 0s, left 0s, right 0s,;
+            transition-delay: 500ms;
+            right: -40px;
+            z-index:1;
+            
+        }
+        
+        &:hover:after {
+            top:-5px;
+            bottom:-15px;
+            left:-50px;
+            right:-50px;
+            transition-delay:0s;
+            z-index:2;
         }
 
-        > .sub-menu{
+        &:hover> .sub-menu{
             display: block;
             position:absolute;
             background-color:white;
@@ -182,7 +195,7 @@ $site-nav-width:220px;
             box-shadow: $base-shadow;
             opacity:1;
             transition: opacity .05s, left .1s;
-            transition-delay: .3s;
+            transition-delay: 0s;
             height:auto;
         }
     }

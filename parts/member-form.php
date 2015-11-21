@@ -38,7 +38,7 @@
     </div>
     <div>
         <input name="birthday" type="text" required>
-        <label for="birthday">Fødesldato</label>    
+        <label for="birthday">Fødselsdato</label>    
     </div>
     <div>
         <input name="address" type="text" required>
