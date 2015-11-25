@@ -34,6 +34,10 @@
         <label>Ansat siden</label>
     </div>
     <div>
+        <input name="ean" type="text">
+        <label>EAN</label>
+    </div>
+    <div>
         <h4>Personlige oplysninger</h4>
     </div>
     <div>

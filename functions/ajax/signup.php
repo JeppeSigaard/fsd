@@ -58,6 +58,7 @@ function smamo_ajax_signup(){
     $email = wp_strip_all_tags($_POST['email']);
     $work = wp_strip_all_tags($_POST['work']);
     $position = wp_strip_all_tags($_POST['position']);
+    $ean = (isset($_POST['ean'])) ? wp_strip_all_tags($_POST['ean']) : '';
     $work_since = strtotime(wp_strip_all_tags($_POST['work_since']));
     $birthday = strtotime(wp_strip_all_tags($_POST['birthday']));
     $phone = strtotime(wp_strip_all_tags($_POST['phone']));
@@ -86,6 +87,7 @@ function smamo_ajax_signup(){
     update_post_meta($new,'medlem_email',$email);
     update_post_meta($new,'medlem_work',$work);
     update_post_meta($new,'medlem_position',$position);
+    update_post_meta($new,'medlem_ean',$position);
     update_post_meta($new,'medlem_work_since',$work_since);
     update_post_meta($new,'medlem_birthday',$birthday);
     update_post_meta($new,'medlem_phone',$phone);

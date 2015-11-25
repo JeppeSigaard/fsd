@@ -19,7 +19,11 @@ if( $admit_form === '1') :
     </div>
     <div>
         <input name="company" type="text"/>
-        <label for="company">Indtast evt. firmanavn</label>
+        <label for="company">Indtast evt. firma/sygehus</label>
+    </div>
+    <div>
+        <input name="ean" type="text"/>
+        <label for="ean">Indtast evt. EAN</label>
     </div>
     <div class="right">
         <a href="#" class="submit arrow-link ">Tilmeld til arrangement</a>

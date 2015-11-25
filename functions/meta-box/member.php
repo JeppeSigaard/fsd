@@ -35,6 +35,12 @@ $mb[] = array(
         ),
         
         array(
+            'name'  => __( 'EAN', 'rwmb' ),
+            'id'    => "medlem_ean",
+            'type' => 'text',
+        ),
+        
+        array(
             'id'    => "medlem_sep",
             'type' => 'divider',
         ),

@@ -87,6 +87,8 @@ $site-nav-width:220px;
         transition: color 120ms;
         padding:12px 0px;
         line-height:1.2;
+        position: relative;
+        z-index:3;
         
         &:hover{
             color: $fsd-color-red;

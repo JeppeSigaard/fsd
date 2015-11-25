@@ -30,5 +30,11 @@ $mb[] = array(
             'id'    => "add_company",
             'type' => 'text',
         ),
+        
+        array(
+            'name'  => __( 'EAN', 'rwmb' ),
+            'id'    => "add_ean",
+            'type' => 'text',
+        ),
     ),
 );
