@@ -7,5 +7,6 @@
 // @koala-append 'modules/window-scroll.js';
 // @koala-append 'modules/sync-scroll.js';
 // @koala-append 'modules/front-page-slider.js';
+// @koala-append 'modules/excel-export.js';
 
 /* Kompileret med koala, brug din egen som du har lyst :-) */

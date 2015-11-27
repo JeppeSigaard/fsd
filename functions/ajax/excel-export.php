@@ -1,6 +1,7 @@
 <?php
 
 add_action('wp_ajax_smamo_excel_export','smamo_excel_export');
+add_action( 'wp_ajax_nopriv_smamo_excel_export', 'smamo_excel_export' );
 function smamo_excel_export(){
     $response = array();
 
