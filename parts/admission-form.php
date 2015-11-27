@@ -25,6 +25,10 @@ if( $admit_form === '1') :
         <input name="ean" type="text"/>
         <label for="ean">Indtast evt. EAN</label>
     </div>
+    <div>
+        <input name="member_of" type="text"/>
+        <label for="member_of">Indtast evt. medlemskab</label>
+    </div>
     <div class="right">
         <a href="#" class="submit arrow-link ">Tilmeld til arrangement</a>
     </div>

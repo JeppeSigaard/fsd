@@ -51,6 +51,7 @@ function smamo_add_medlem_fields(){
             'slug' => 'post',
             'output' => 'Postnummer',
             'meta_field' => 'medlem_post',
+            'filter' => true,
         ),
 
         'by' => array(
@@ -148,9 +149,8 @@ function smamo_manage_meta_columns($column_name, $id) {
                 echo edit_post_link( get_post_meta($post->ID,$field['meta_field'],true), '<b>', '</b>', $post->ID );
             }
             
-            if(isset($field['field_type']) && $field['field_type'] === 'options'){
-                echo $field['options'][get_post_meta($post->ID,$field['meta_field'],true)];
-                
+            else if(isset($field['field_type']) && $field['field_type'] === 'options'){
+                echo $field['options'][get_post_meta($post->ID,$field['meta_field'],true)];   
             }
             
             else{

@@ -155,5 +155,12 @@ $mb[] = array(
             'type' => 'checkbox',
             'std'   => '0',
         ),
+        
+        array(
+            'name'  => __( 'Om nye medlemsskaber', 'rwmb' ),
+            'id'    => "notify_new_member",
+            'type' => 'checkbox',
+            'std'   => '0',
+        ),
     ),
 );

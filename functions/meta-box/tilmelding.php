@@ -32,6 +32,12 @@ $mb[] = array(
         ),
         
         array(
+            'name'  => __( 'Medlem af', 'rwmb' ),
+            'id'    => "add_member_of",
+            'type' => 'text',
+        ),
+        
+        array(
             'name'  => __( 'EAN', 'rwmb' ),
             'id'    => "add_ean",
             'type' => 'text',

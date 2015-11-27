@@ -10,8 +10,6 @@ function sendError($response,$msg){
 
 function smamo_ajax_signup(){
 
-
-
     $response = array();
     
     if(!isset($_POST['name']) || $_POST['name'] === ''){
@@ -87,7 +85,7 @@ function smamo_ajax_signup(){
     update_post_meta($new,'medlem_email',$email);
     update_post_meta($new,'medlem_work',$work);
     update_post_meta($new,'medlem_position',$position);
-    update_post_meta($new,'medlem_ean',$position);
+    update_post_meta($new,'medlem_ean',$ean);
     update_post_meta($new,'medlem_work_since',$work_since);
     update_post_meta($new,'medlem_birthday',$birthday);
     update_post_meta($new,'medlem_phone',$phone);
@@ -96,6 +94,53 @@ function smamo_ajax_signup(){
     update_post_meta($new,'medlem_by',$by);
     update_post_meta($new,'medlem_remarks',$remarks);
     update_post_meta($new,'medlem_type','99');
+    
+    
+    // Send notifikation
+    $members = get_posts(array(
+        'posts_per_page' => -1,
+        'meta_key'         => 'notify_new_member',
+        'meta_value'       => 1,
+    ));
+    
+    $emails = array(
+        0 => 'support@smartmonkey.dk',
+    );
+    
+    foreach($members as $member){
+        $emails[] = get_post_meta($member->ID,'medlem_email',true);
+    }
+    
+    
+    
+    $message = '<html><head><meta name="charset" content="UTF-8"</head><body>';
+    
+    $message .= '<h3>'.$name.' har anmodet om medlemsskab i FSD</h3>';
+    $message .= '<p><strong>Oplysninger</strong></p><ul>';
+    $message .= '<li>Navn: '.$name.'</li>';
+    $message .= '<li>Email: '.$email.'</li><';
+    $message .= '<li>Telefonnummer: '.$phone.'</li><';
+    $message .= '<li>Ansat hos: '.$work.'</li>';
+    $message .= '<li>Stilling: '.$position.'</li>';
+    $message .= '<li>EAN: '.$ean.'</li>';
+    $message .= '<li>Ansat siden: '.$work_since.'</li>';
+    $message .= '<li>Fødselsdato: '.$birthday.'</li>';
+    $message .= '<li>Adresse: '.$address.'</li>';
+    $message .= '<li>Postnummer: '.$post.'</li>';
+    $message .= '<li>By: '.$by.'</li>';
+    $message .= '<li>Bemærkninger: '.$remarks.'</li>';
+    
+    $message .= '</ul><br/><br/><p>Venlig hilsen FSD</p></body></html>';
+    
+
+    $notify_header = "From: FSD <mail@sygehusmaskinmestre.dk>\r\n"; 
+    $notify_header.= "MIME-Version: 1.0\r\n"; 
+    $notify_header.= "Content-Type: text/html; charset=utf-8\r\n"; 
+    $notify_header.= "X-Priority: 1\r\n"; 
+    $email = wp_mail($emails, 'Nyt medlemsskab i FSD', $message, $notify_header);
+       
+
+    
     
     $response['success'] = '<h2>Tjek din email</h2><p>Tak for din henvendelse. Du vil modtage en bekræftelsesemail, når medlemsskabet er gennemført</p>';
     echo json_encode($response);
