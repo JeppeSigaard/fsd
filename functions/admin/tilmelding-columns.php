@@ -8,6 +8,7 @@ function smamo_add_tilmelding_fields(){
             'slug' => 'add_name',
             'output' => 'Navn',
             'meta_field' => 'add_name',
+            'link' => 'post',
         ),
         
         'add_email' => array(
@@ -32,6 +33,12 @@ function smamo_add_tilmelding_fields(){
             'slug' => 'add_ean',
             'output' => 'EAN',
             'meta_field' => 'add_ean',
+        ),
+        
+        'add_user_id' => array(
+            'slug' => 'add_user_id',
+            'output' => 'Bruger ID/Rekv. nr.',
+            'meta_field' => 'add_user_id',
         ),
         
         'add_to' => array(

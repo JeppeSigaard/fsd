@@ -38,6 +38,10 @@
         <label>EAN</label>
     </div>
     <div>
+        <input name="user_id" type="text">
+        <label for="user_id">Bruger ID</label>
+    </div>
+    <div>
         <h4>Personlige oplysninger</h4>
     </div>
     <div>
@@ -57,6 +61,10 @@
             <input name="by" type="text" required>
             <label for="by">By</label> 
         </div>  
+    </div>
+    <div>
+        <input name="cpr" type="text" required>
+        <label for="cpr">CPR nummer</label>    
     </div>
     <div>
         <h4>Bemærkninger</h4>

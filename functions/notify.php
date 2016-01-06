@@ -1,4 +1,5 @@
 <?php
+setlocale(LC_ALL, "da_DK.UTF-8", "Danish_Denmark.1252", "danish_denmark", "danish", "dk_DK@euro");
 
 // Funktion til at sende emails
 function sendEmail( $from_name, $from, $to, $subject, $message ){
@@ -51,7 +52,7 @@ function smamo_do_notifier() {
                 'phone'     => get_post_meta($member->ID,'medlem_phone',true),
                 'mobile'    => get_post_meta($member->ID,'medlem_mobile',true),
                 'email'     => get_post_meta($member->ID,'medlem_email',true),
-                'date'      => date('d. F',strtotime($bday)).' '.date('Y'),
+                'date'      => strftime('%d %B',strtotime($bday)).' '.date('Y'),
                 'amount'    => $current_year - date('Y', strtotime($bday)),
             );
         }

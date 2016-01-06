@@ -57,6 +57,8 @@ function smamo_ajax_signup(){
     $work = wp_strip_all_tags($_POST['work']);
     $position = wp_strip_all_tags($_POST['position']);
     $ean = (isset($_POST['ean'])) ? wp_strip_all_tags($_POST['ean']) : '';
+    $cpr = (isset($_POST['cpr'])) ? wp_strip_all_tags($_POST['cpr']) : '';
+    $user_id = (isset($_POST['user_id'])) ? wp_strip_all_tags($_POST['user_id']) : '';
     $work_since = strtotime(wp_strip_all_tags($_POST['work_since']));
     $birthday = strtotime(wp_strip_all_tags($_POST['birthday']));
     $phone = strtotime(wp_strip_all_tags($_POST['phone']));
@@ -86,6 +88,8 @@ function smamo_ajax_signup(){
     update_post_meta($new,'medlem_work',$work);
     update_post_meta($new,'medlem_position',$position);
     update_post_meta($new,'medlem_ean',$ean);
+    update_post_meta($new,'medlem_cpr',$cpr);
+    update_post_meta($new,'medlem_user_id',$user_id);
     update_post_meta($new,'medlem_work_since',$work_since);
     update_post_meta($new,'medlem_birthday',$birthday);
     update_post_meta($new,'medlem_phone',$phone);
@@ -123,11 +127,13 @@ function smamo_ajax_signup(){
     $message .= '<li>Ansat hos: '.$work.'</li>';
     $message .= '<li>Stilling: '.$position.'</li>';
     $message .= '<li>EAN: '.$ean.'</li>';
+    $message .= '<li>Bruger ID: '.$user_id.'</li>';
     $message .= '<li>Ansat siden: '.$work_since.'</li>';
     $message .= '<li>Fødselsdato: '.$birthday.'</li>';
     $message .= '<li>Adresse: '.$address.'</li>';
     $message .= '<li>Postnummer: '.$post.'</li>';
     $message .= '<li>By: '.$by.'</li>';
+    $message .= '<li>CPR: '.$cpr.'</li>';
     $message .= '<li>Bemærkninger: '.$remarks.'</li>';
     
     $message .= '</ul><br/><br/><p>Venlig hilsen FSD</p></body></html>';

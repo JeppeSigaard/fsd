@@ -42,5 +42,11 @@ $mb[] = array(
             'id'    => "add_ean",
             'type' => 'text',
         ),
+        
+        array(
+            'name'  => __( 'Bruger ID/Rekv. nr.', 'rwmb' ),
+            'id'    => "add_user_id",
+            'type' => 'text',
+        ),
     ),
 );

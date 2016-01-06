@@ -26,6 +26,10 @@ if( $admit_form === '1') :
         <label for="ean">Indtast evt. EAN</label>
     </div>
     <div>
+        <input name="user_id" type="text"/>
+        <label for="user_id">Indtast Bruger ID/Rekv. nr.</label>
+    </div>
+    <div>
         <input name="member_of" type="text"/>
         <label for="member_of">Indtast evt. medlemskab</label>
     </div>

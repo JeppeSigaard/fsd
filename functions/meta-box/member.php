@@ -41,6 +41,12 @@ $mb[] = array(
         ),
         
         array(
+            'name'  => __( 'Bruger ID', 'rwmb' ),
+            'id'    => "medlem_user_id",
+            'type' => 'text',
+        ),
+        
+        array(
             'id'    => "medlem_sep",
             'type' => 'divider',
         ),
@@ -95,6 +101,12 @@ $mb[] = array(
         array(
             'name'  => __( 'E-mail', 'rwmb' ),
             'id'    => "medlem_email",
+            'type' => 'text',
+        ),
+        
+        array(
+            'name'  => __( 'CPR', 'rwmb' ),
+            'id'    => "medlem_cpr",
             'type' => 'text',
         ),
         

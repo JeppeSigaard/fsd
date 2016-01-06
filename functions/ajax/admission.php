@@ -17,6 +17,7 @@ function smamo_ajax_admission(){
     $company = (isset($_POST['company'])) ? wp_strip_all_tags($_POST['company']) : false;
     $ean = (isset($_POST['ean'])) ? wp_strip_all_tags($_POST['ean']) : false;
     $member_of = (isset($_POST['member_of'])) ? wp_strip_all_tags($_POST['member_of']) : false;
+    $user_id = (isset($_POST['user_id'])) ? wp_strip_all_tags($_POST['user_id']) : false;
     
     if(!$email){$response['error'] = 'Email mangler'; return_response($response);}
     if(!$name){$response['error'] = 'Navn mangler'; return_response($response);}
@@ -41,7 +42,8 @@ function smamo_ajax_admission(){
     update_post_meta($new,'add_email',$email);
     update_post_meta($new,'add_ean',$ean);
     if ($company) {update_post_meta($new,'add_company',$company);}
-    if ($member_of) {update_post_meta($new,'add_member_of',$company);}
+    if ($member_of) {update_post_meta($new,'add_member_of',$member_of);}
+    if ($user_id) {update_post_meta($new,'add_user_id',$user_id);}
 
     $response['success'] = '<p>Tak for din henvendelse. Din tilmelding er registreret.</p>';
     return_response($response);
