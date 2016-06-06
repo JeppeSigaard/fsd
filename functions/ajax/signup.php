@@ -107,9 +107,7 @@ function smamo_ajax_signup(){
         'meta_value'       => 1,
     ));
     
-    $emails = array(
-        0 => 'support@smartmonkey.dk',
-    );
+    $emails = array();
     
     foreach($members as $member){
         $emails[] = get_post_meta($member->ID,'medlem_email',true);
@@ -117,13 +115,16 @@ function smamo_ajax_signup(){
     
     
     
-    $message = '<html><head><meta name="charset" content="UTF-8"</head><body>';
+    $message_head = '<html><head><meta name="charset" content="UTF-8"</head><body>';
     
-    $message .= '<h3>'.$name.' har anmodet om medlemsskab i FSD</h3>';
+    $message_copy_notice = '<p><strong>Kære '. $name .'</strong></p>';
+    $message_copy_notice .= '<p>Tak for din anmodning om medlemsskab i FSD. Du kan se en kopi af de sendte data herunder. FSD vil hurtigst muligt vende tilbage, når medlemsskabet er gennemført. </p><br/><br/>';
+    
+    $message = '<h3>'.$name.' har anmodet om medlemsskab i FSD</h3>';
     $message .= '<p><strong>Oplysninger</strong></p><ul>';
     $message .= '<li>Navn: '.$name.'</li>';
-    $message .= '<li>Email: '.$email.'</li><';
-    $message .= '<li>Telefonnummer: '.$phone.'</li><';
+    $message .= '<li>Email: '.$email.'</li>';
+    $message .= '<li>Telefonnummer: '.$phone.'</li>';
     $message .= '<li>Ansat hos: '.$work.'</li>';
     $message .= '<li>Stilling: '.$position.'</li>';
     $message .= '<li>EAN: '.$ean.'</li>';
@@ -136,19 +137,18 @@ function smamo_ajax_signup(){
     $message .= '<li>CPR: '.$cpr.'</li>';
     $message .= '<li>Bemærkninger: '.$remarks.'</li>';
     
-    $message .= '</ul><br/><br/><p>Venlig hilsen FSD</p></body></html>';
+    $message_footer = '</ul><br/><br/><p>Venlig hilsen FSD</p></body></html>';
     
 
     $notify_header = "From: FSD <mail@sygehusmaskinmestre.dk>\r\n"; 
     $notify_header.= "MIME-Version: 1.0\r\n"; 
     $notify_header.= "Content-Type: text/html; charset=utf-8\r\n"; 
     $notify_header.= "X-Priority: 1\r\n"; 
-    $email = wp_mail($emails, 'Nyt medlemsskab i FSD', $message, $notify_header);
-       
-
+    $email = wp_mail($emails, 'Nyt medlemsskab i FSD', $message_head.$message.$message_footer, $notify_header);
+    $confirm = wp_mail($email,'Tak for din henvendelse',$message_head.$message_copy_notice.$message.$message_footer,$notify_header);
+    $confirm_copy = wp_mail('support@smartmonkey.dk','Tak for din henvendelse',$message_head.$message_copy_notice.$message.$message_footer,$notify_header);
     
-    
-    $response['success'] = '<h2>Tjek din email</h2><p>Tak for din henvendelse. Du vil modtage en bekræftelsesemail, når medlemsskabet er gennemført</p>';
+    $response['success'] = '<h2>Tjek din email</h2><p>Tak for din registrering. FSD vil hurtigst muligt vende tilbage, når medlemsskabet er gennemført.</p>';
     echo json_encode($response);
     exit;
 
