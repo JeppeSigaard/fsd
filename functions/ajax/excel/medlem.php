@@ -9,20 +9,21 @@ $list_type_name = array(
 $objPHPExcel->setActiveSheetIndex(0)
             ->setCellValue('A1', 'Id')
             ->setCellValue('B1', 'Navn')
-            ->setCellValue('C1', 'Titel')
-            ->setCellValue('D1', 'Arbejdssted')
-            ->setCellValue('E1', 'Region')
-            ->setCellValue('F1', 'Ansat siden')
-            ->setCellValue('G1', 'Fødselsdato')
+            ->setCellValue('C1', 'CPR-nummer')
+            ->setCellValue('D1', 'Titel')
+            ->setCellValue('E1', 'Arbejdssted')
+            ->setCellValue('F1', 'Region')
+            ->setCellValue('G1', 'Ansat siden')
+            ->setCellValue('H1', 'Fødselsdato')
 
-            ->setCellValue('H1','Adresse')
-            ->setCellValue('I1','Postnummer')
-            ->setCellValue('J1','By')
+            ->setCellValue('I1','Adresse')
+            ->setCellValue('J1','Postnummer')
+            ->setCellValue('K1','By')
 
-            ->setCellValue('K1','Telefon')
-            ->setCellValue('L1','Email')
-            ->setCellValue('M1','Medlemstype')
-            ->setCellValue('N1','Tillidsposter');
+            ->setCellValue('L1','Telefon')
+            ->setCellValue('M1','Email')
+            ->setCellValue('N1','Medlemstype')
+            ->setCellValue('O1','Tillidsposter');
 
 
 
@@ -67,20 +68,21 @@ foreach ( $myposts as $post ) {
     $objPHPExcel->setActiveSheetIndex(0)
         ->setCellValue('A'.$i, $post->ID)
         ->setCellValue('B'.$i, get_post_meta($post->ID,'medlem_name',true))
-        ->setCellValue('C'.$i, get_post_meta($post->ID,'medlem_position',true))
-        ->setCellValue('D'.$i, get_post_meta($post->ID,'medlem_work',true))
-        ->setCellValue('E'.$i, get_post_meta($post->ID,'medlem_region',true))
-        ->setCellValue('F'.$i, get_post_meta($post->ID,'medlem_work_since',true))
-        ->setCellValue('G'.$i, get_post_meta($post->ID,'medlem_birthday',true))
+        ->setCellValue('C'.$i, get_post_meta($post->ID,'medlem_cpr',true))
+        ->setCellValue('D'.$i, get_post_meta($post->ID,'medlem_position',true))
+        ->setCellValue('E'.$i, get_post_meta($post->ID,'medlem_work',true))
+        ->setCellValue('F'.$i, get_post_meta($post->ID,'medlem_region',true))
+        ->setCellValue('G'.$i, get_post_meta($post->ID,'medlem_work_since',true))
+        ->setCellValue('H'.$i, get_post_meta($post->ID,'medlem_birthday',true))
 
-        ->setCellValue('H'.$i, get_post_meta($post->ID,'medlem_address',true))
-        ->setCellValue('I'.$i, get_post_meta($post->ID,'medlem_post',true))
-        ->setCellValue('J'.$i, get_post_meta($post->ID,'medlem_by',true))
+        ->setCellValue('I'.$i, get_post_meta($post->ID,'medlem_address',true))
+        ->setCellValue('J'.$i, get_post_meta($post->ID,'medlem_post',true))
+        ->setCellValue('K'.$i, get_post_meta($post->ID,'medlem_by',true))
 
-        ->setCellValue('K'.$i, get_post_meta($post->ID,'medlem_phone',true))
-        ->setCellValue('L'.$i, get_post_meta($post->ID,'medlem_email',true))
-        ->setCellValue('M'.$i, $medlem_type_name)
-        ->setCellValue('N'.$i, $member_posts);
+        ->setCellValue('L'.$i, get_post_meta($post->ID,'medlem_phone',true))
+        ->setCellValue('M'.$i, get_post_meta($post->ID,'medlem_email',true))
+        ->setCellValue('N'.$i, $medlem_type_name)
+        ->setCellValue('O'.$i, $member_posts);
 
     $oldI++;
 

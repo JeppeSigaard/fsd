@@ -1,8 +1,19 @@
 <?php
 
-add_action('wp_ajax_smamo_excel_export','smamo_excel_export');
-add_action( 'wp_ajax_nopriv_smamo_excel_export', 'smamo_excel_export' );
-function smamo_excel_export(){
+add_action('wp_ajax_smamo_excel_export','smamo_make_excel');
+add_action( 'wp_ajax_nopriv_smamo_excel_export', 'smamo_nopriv_make_excel' );
+
+function smamo_make_excel(){
+    
+    smamo_excel_export(true);
+}
+
+function smamo_nopriv_make_excel(){
+    
+    smamo_excel_export(false);
+}
+
+function smamo_excel_export($priv){
     $response = array();
 
 
@@ -52,10 +63,16 @@ function smamo_excel_export(){
     $myposts = get_posts( $args );
     
     
-    if(isset($_POST['post_type']) && $_POST['post_type'] === 'medlem'){
+    if(isset($_POST['post_type']) && $_POST['post_type'] === 'medlem' && $priv === true){
 
         require_once get_template_directory().'/functions/ajax/excel/medlem.php';
 
+    }
+    
+    else if(isset($_POST['post_type']) && $_POST['post_type'] === 'medlem'){
+        
+        require_once get_template_directory().'/functions/ajax/excel/nopriv-medlem.php';
+        
     }
     
     else if(isset($_POST['post_type']) && $_POST['post_type'] === 'tilmelding'){
@@ -63,7 +80,11 @@ function smamo_excel_export(){
         require get_template_directory().'/functions/ajax/excel/tilmelding.php';
 
     }
-
+    
+    else{
+        $response['file'] = get_bloginfo('url');
+        wp_die(json_encode($response));
+    }
 
     // Rename worksheet
 
@@ -97,7 +118,10 @@ function smamo_excel_export(){
 
     // Echo Gemt sti
     $response['file'] = get_bloginfo('url').$exports_path;
-
+    if(is_user_logged_in()){
+        
+        $response['user'] = get_currentuserinfo();
+    }
 
     echo json_encode($response);
     exit;

@@ -45,6 +45,22 @@ function smamo_ajax_admission(){
     if ($member_of) {update_post_meta($new,'add_member_of',$member_of);}
     if ($user_id) {update_post_meta($new,'add_user_id',$user_id);}
 
+    // Send emails
+    $message = '<html><head><meta name="charset" content="UTF-8"</head><body>';
+    
+    $message .= '<h3>Bekræftelse på tilmelding</h3>';
+    $message .= '<p>Kære '.$name.'. Tak for din tilmelding, som nu er registreret</p>';
+    $message .= '<p>Hvis du har nogen spørgsmål til din tilmelding eller arrangementet, kan du kontakte FSD på info@sygehusmaskinmestre.dk</p>';
+    $message .= '<br/><br/><p>Venlig hilsen FSD</p></body></html>';
+    
+    $confirm_header = "From: FSD <mail@sygehusmaskinmestre.dk>\r\n"; 
+    $confirm_header.= "MIME-Version: 1.0\r\n"; 
+    $confirm_header.= "Content-Type: text/html; charset=utf-8\r\n"; 
+    $confirm_header.= "X-Priority: 1\r\n"; 
+    
+    $confirm = wp_mail($email, 'Bekræftelse på tilmelding', $message, $confirm_header);
+    $copy = wp_mail('support@smartmonkey.dk', '[Sikkerhedskopi] Bekræftelse på tilmelding', $message, $confirm_header);
+    
     $response['success'] = '<p>Tak for din henvendelse. Din tilmelding er registreret.</p>';
     return_response($response);
     

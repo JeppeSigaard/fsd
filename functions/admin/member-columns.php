@@ -59,6 +59,12 @@ function smamo_add_medlem_fields(){
             'output' => 'By',
             'meta_field' => 'medlem_by',
         ),
+        
+        'cvr' => array(
+            'slug' => 'cpr',
+            'output' => 'CPR-nummer',
+            'meta_field' => 'medlem_cpr',
+        ),
 
         'phone' => array(
             'slug' => 'phone',
